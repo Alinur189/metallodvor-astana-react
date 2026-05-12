@@ -51,7 +51,7 @@ export default function Contacts() {
 
           <article className="contactCard">
             <span>Email</span>
-            <a href="mailto:sales@metallodvor.kz">sales@metallodvor.kz</a>
+            <a href="mailto:metallodvorastana@gmail.com">metallodvorastana@gmail.com</a>
           </article>
 
           <article className="contactCard">
