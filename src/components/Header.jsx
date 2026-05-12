@@ -41,7 +41,7 @@ export default function Header() {
       <div className="topStrip">
         <div className="container topStrip__inner">
           <span>Металлическая сетка и металлопрокат в Астане</span>
-          <a href="tel:+77771234567">+7 777 123 45 67</a>
+          <a href="tel:+77015877127">+7 701 587 7127</a>
         </div>
       </div>
 

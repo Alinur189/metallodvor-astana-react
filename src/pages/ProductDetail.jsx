@@ -64,7 +64,7 @@ export default function ProductDetail({ onOrder }) {
             <button className="btn btn--primary" type="button" onClick={() => onOrder(product)}>
               Заказать
             </button>
-            <a className="btn btn--ghost" href="tel:+77771234567">Позвонить</a>
+            <a className="btn btn--ghost" href="tel:+77015877127">Позвонить</a>
             <a
               className="btn btn--whatsapp"
               href="https://wa.me/77771234567"

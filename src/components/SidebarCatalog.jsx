@@ -27,7 +27,7 @@ export default function SidebarCatalog() {
       <div className="sidebarCatalog__manager">
         <span>Нужен расчет?</span>
         <strong>Подберем сетку под ваш объект</strong>
-        <a href="tel:+77771234567">Позвонить менеджеру</a>
+        <a href="tel:+77015877127">Позвонить</a>
       </div>
     </aside>
   );

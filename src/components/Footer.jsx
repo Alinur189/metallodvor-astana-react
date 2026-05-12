@@ -43,7 +43,7 @@ export default function Footer() {
         <div>
           <h3>Контакты</h3>
           <ul>
-            <li><a href="tel:+77771234567">+7 777 123 45 67</a></li>
+            <li><a href="tel:+7 701 587 7127">+7 701 587 7127</a></li>
             <li><a href="mailto:sales@metallodvor.kz">sales@metallodvor.kz</a></li>
             <li>Астана, складская зона, ул. Индустриальная 25</li>
           </ul>

@@ -39,7 +39,7 @@ export default function Contacts() {
         <div className="contactCards">
           <article className="contactCard">
             <span>Телефон</span>
-            <a href="tel:+77771234567">+7 777 123 45 67</a>
+            <a href="tel:+77015877127">+7 701 587 7127</a>
           </article>
 
           <article className="contactCard">

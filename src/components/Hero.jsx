@@ -13,7 +13,7 @@ export default function Hero() {
 
         <div className="hero__actions">
           <Link className="btn btn--primary" to="/catalog">Перейти в каталог</Link>
-          <a className="btn btn--light" href="tel:+77771234567">Получить консультацию</a>
+          <a className="btn btn--light" href="tel:+77015877127">Получить консультацию</a>
         </div>
       </div>
 
