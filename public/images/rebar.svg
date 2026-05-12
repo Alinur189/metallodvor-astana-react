@@ -1,0 +1,22 @@
+<svg width="640" height="460" viewBox="0 0 640 460" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">Арматура А500С</title>
+  <rect width="640" height="460" rx="36" fill="#F8FBFF"/>
+  <circle cx="512" cy="92" r="128" fill="#EAF3FF"/>
+  <circle cx="112" cy="380" r="100" fill="#FEE2E2"/>
+  <rect x="60" y="55" width="520" height="350" rx="28" fill="white" stroke="#D1D5DB" stroke-width="4"/>
+  
+        <g stroke="#15569a" stroke-width="20" stroke-linecap="round" opacity=".82">
+          <path d="M100 110 L520 320"/>
+          <path d="M125 190 L545 400"/>
+          <path d="M70 270 L390 430"/>
+        </g>
+        <g stroke="#e1252f" stroke-width="8" stroke-linecap="round" opacity=".75">
+          <path d="M150 135 L130 170"/>
+          <path d="M230 175 L210 210"/>
+          <path d="M310 215 L290 250"/>
+          <path d="M390 255 L370 290"/>
+          <path d="M470 295 L450 330"/>
+        </g>
+        
+  <path d="M72 405 C170 376 230 392 325 410 C420 428 505 410 570 385" stroke="#081B34" stroke-width="6" stroke-linecap="round" opacity=".16"/>
+</svg>

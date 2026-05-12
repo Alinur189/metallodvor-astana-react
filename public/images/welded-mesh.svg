@@ -1,0 +1,24 @@
+<svg width="640" height="460" viewBox="0 0 640 460" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">Сетка сварная оцинкованная 50 на 50</title>
+  <rect width="640" height="460" rx="36" fill="#F8FBFF"/>
+  <circle cx="512" cy="92" r="128" fill="#EAF3FF"/>
+  <circle cx="112" cy="380" r="100" fill="#FEE2E2"/>
+  <rect x="60" y="55" width="520" height="350" rx="28" fill="white" stroke="#D1D5DB" stroke-width="4"/>
+  
+        <g stroke="#15569a" stroke-width="6" opacity=".7">
+          <path d="M90 95 H510"/>
+          <path d="M90 155 H510"/>
+          <path d="M90 215 H510"/>
+          <path d="M90 275 H510"/>
+          <path d="M90 335 H510"/>
+          <path d="M110 75 V360"/>
+          <path d="M180 75 V360"/>
+          <path d="M250 75 V360"/>
+          <path d="M320 75 V360"/>
+          <path d="M390 75 V360"/>
+          <path d="M460 75 V360"/>
+        </g>
+        <path d="M78 374 L520 374" stroke="#e1252f" stroke-width="14" stroke-linecap="round"/>
+        
+  <path d="M72 405 C170 376 230 392 325 410 C420 428 505 410 570 385" stroke="#081B34" stroke-width="6" stroke-linecap="round" opacity=".16"/>
+</svg>

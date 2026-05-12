@@ -1,0 +1,20 @@
+export default function FloatingButtons() {
+  const whatsappText = encodeURIComponent('Здравствуйте! Хочу узнать цену и наличие металлической сетки.');
+
+  return (
+    <div className="floatingButtons" aria-label="Быстрые контакты">
+      <a className="floatingButton floatingButton--phone" href="tel:+77771234567" aria-label="Позвонить">
+        ☎
+      </a>
+      <a
+        className="floatingButton floatingButton--whatsapp"
+        href={`https://wa.me/77771234567?text=${whatsappText}`}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Написать в WhatsApp"
+      >
+        💬
+      </a>
+    </div>
+  );
+}
