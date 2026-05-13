@@ -1,0 +1,20 @@
+<svg width="640" height="460" viewBox="0 0 640 460" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">Сетка просечно-вытяжная ПВЛ</title>
+  <rect width="640" height="460" rx="36" fill="#F8FBFF"/>
+  <circle cx="512" cy="92" r="128" fill="#EAF3FF"/>
+  <circle cx="112" cy="380" r="100" fill="#FEE2E2"/>
+  <rect x="60" y="55" width="520" height="350" rx="28" fill="white" stroke="#D1D5DB" stroke-width="4"/>
+  
+        <g stroke="#15569a" stroke-width="5" fill="none" opacity=".78">
+          <path d="M95 105 C135 70 175 70 215 105 C175 140 135 140 95 105Z"/>
+          <path d="M235 105 C275 70 315 70 355 105 C315 140 275 140 235 105Z"/>
+          <path d="M375 105 C415 70 455 70 495 105 C455 140 415 140 375 105Z"/>
+          <path d="M165 205 C205 170 245 170 285 205 C245 240 205 240 165 205Z"/>
+          <path d="M305 205 C345 170 385 170 425 205 C385 240 345 240 305 205Z"/>
+          <path d="M95 305 C135 270 175 270 215 305 C175 340 135 340 95 305Z"/>
+          <path d="M235 305 C275 270 315 270 355 305 C315 340 275 340 235 305Z"/>
+          <path d="M375 305 C415 270 455 270 495 305 C455 340 415 340 375 305Z"/>
+        </g>
+        
+  <path d="M72 405 C170 376 230 392 325 410 C420 428 505 410 570 385" stroke="#081B34" stroke-width="6" stroke-linecap="round" opacity=".16"/>
+</svg>

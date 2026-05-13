@@ -1,0 +1,17 @@
+<svg width="640" height="460" viewBox="0 0 640 460" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title id="title">Проволока вязальная</title>
+  <rect width="640" height="460" rx="36" fill="#F8FBFF"/>
+  <circle cx="512" cy="92" r="128" fill="#EAF3FF"/>
+  <circle cx="112" cy="380" r="100" fill="#FEE2E2"/>
+  <rect x="60" y="55" width="520" height="350" rx="28" fill="white" stroke="#D1D5DB" stroke-width="4"/>
+  
+        <g fill="none" stroke="#15569a" stroke-width="15" opacity=".76">
+          <circle cx="230" cy="210" r="110"/>
+          <circle cx="230" cy="210" r="75"/>
+          <circle cx="230" cy="210" r="40"/>
+          <path d="M330 262 C420 275 490 250 515 195"/>
+        </g>
+        <path d="M412 180 L520 180" stroke="#e1252f" stroke-width="18" stroke-linecap="round"/>
+        
+  <path d="M72 405 C170 376 230 392 325 410 C420 428 505 410 570 385" stroke="#081B34" stroke-width="6" stroke-linecap="round" opacity=".16"/>
+</svg>
