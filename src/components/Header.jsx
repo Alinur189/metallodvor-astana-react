@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 
+const PRICE_LIST_URL = 'https://docs.google.com/spreadsheets/d/1OpseU3JsMv1ZPVDZ7VpHGfWppY7QsykH0dx1ZGgmC8w/edit?gid=0#gid=0';
+
 const navItems = [
   { to: '/catalog', label: 'Каталог товаров' },
   { to: '/about', label: 'О компании' },
@@ -8,7 +10,6 @@ const navItems = [
   { to: '/delivery', label: 'Услуги' },
   { to: '/delivery', label: 'Доставка' },
   { to: '/contacts', label: 'Контакты' },
-  { to: '/price-list', label: 'Прайс-лист' },
 ];
 
 export default function Header() {
@@ -41,7 +42,7 @@ export default function Header() {
     <header className="siteHeader">
       <div className="topStrip">
         <div className="container topStrip__inner">
-          <span>Металлическая сетка и металлопрокат в Астане</span>
+          <span>Сетка сварная для стяжки и кладки  в Астане</span>
           <a href="tel:+77015877127">+7 701 587 7127</a>
         </div>
       </div>
@@ -95,6 +96,14 @@ export default function Header() {
               {item.label}
             </NavLink>
           ))}
+          <a
+            href={PRICE_LIST_URL}
+            className="navLink"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Прайс-лист
+          </a>
         </div>
       </nav>
     </header>
