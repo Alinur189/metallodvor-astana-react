@@ -4,6 +4,7 @@ import { Link, NavLink, useLocation, useNavigate, useSearchParams } from 'react-
 const navItems = [
   { to: '/catalog', label: 'Каталог товаров' },
   { to: '/about', label: 'О компании' },
+  { to: '/factory', label: 'Наш завод' },
   { to: '/delivery', label: 'Услуги' },
   { to: '/delivery', label: 'Доставка' },
   { to: '/contacts', label: 'Контакты' },

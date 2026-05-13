@@ -13,6 +13,7 @@ import About from './pages/About.jsx';
 import Delivery from './pages/Delivery.jsx';
 import Contacts from './pages/Contacts.jsx';
 import PriceList from './pages/PriceList.jsx';
+import Factory from './pages/Factory.jsx';
 
 export default function App() {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -38,6 +39,7 @@ export default function App() {
           <Route path="/delivery" element={<Delivery />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/price-list" element={<PriceList onOrder={openOrderModal} />} />
+          <Route path="/factory" element={<Factory />} />
         </Routes>
       </main>
       <Footer />
