@@ -153,13 +153,18 @@ main {
   letter-spacing: 0.12em;
 }
 
+.logo__img {
+  height: 120px;
+  width: auto;
+  display: block;
+}
+
 .logo--footer {
   margin-bottom: 18px;
 }
 
-.logo--footer .logo__mark {
-  background: #fff;
-  color: var(--blue-900);
+.logo--footer .logo__img {
+  height: 130px;
 }
 
 .searchBar {

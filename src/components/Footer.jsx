@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { categories } from '../data/categories.js';
+import logo from '../assets/logo.jpg';
 
 export default function Footer() {
   return (
@@ -7,11 +8,7 @@ export default function Footer() {
       <div className="container footer__grid">
         <div>
           <Link className="logo logo--footer" to="/">
-            <span className="logo__mark">МД</span>
-            <span>
-              <strong>МеталлоДвор</strong>
-              <small>Астана</small>
-            </span>
+            <img src={logo} alt="МеталлоДвор Астана" className="logo__img" />
           </Link>
           <p>
             Поставляем металлическую сетку, арматуру и металлопрокат для строительных компаний,
@@ -38,14 +35,18 @@ export default function Footer() {
             <li><Link to="/price-list">Прайс-лист</Link></li>
             <li><Link to="/contacts">Контакты</Link></li>
           </ul>
+
         </div>
+
+
+
 
         <div>
           <h3>Контакты</h3>
           <ul>
             <li><a href="tel:+7 701 587 7127">+7 701 587 7127</a></li>
             <li><a href="mailto:metallodvorastana@gmail.com">metallodvorastana@gmail.com</a></li>
-            <li>Астана, складская зона, ул. Индустриальная 25</li>
+            <li>Астана, Рынок "Эталон ряд 15, место 13"</li>
           </ul>
         </div>
       </div>

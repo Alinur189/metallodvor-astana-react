@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
+import logo from '../assets/logo.jpg';
 
 const PRICE_LIST_URL = 'https://docs.google.com/spreadsheets/d/1OpseU3JsMv1ZPVDZ7VpHGfWppY7QsykH0dx1ZGgmC8w/edit?gid=0#gid=0';
 
@@ -49,11 +50,7 @@ export default function Header() {
 
       <div className="container headerMain">
         <Link className="logo" to="/" aria-label="МеталлоДвор Астана — на главную">
-          <span className="logo__mark">МД</span>
-          <span>
-            <strong>МеталлоДвор</strong>
-            <small>Астана</small>
-          </span>
+          <img src={logo} alt="МеталлоДвор Астана" className="logo__img" />
         </Link>
 
         <form className="searchBar" onSubmit={handleSubmit} role="search">
