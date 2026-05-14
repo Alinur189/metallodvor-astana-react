@@ -676,6 +676,13 @@ dt {
   font-size: 14px;
 }
 
+.priceLink {
+  color: var(--blue-700);
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
 dd {
   margin: 0;
   color: var(--gray-950);

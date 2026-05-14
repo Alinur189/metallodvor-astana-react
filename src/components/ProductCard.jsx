@@ -22,7 +22,7 @@ export default function ProductCard({ product, onOrder }) {
           </div>
           <div>
             <dt>Цена</dt>
-            <dd>{product.price}</dd>
+            <dd><Link to="/price-list" className="priceLink">см. прайс-лист</Link></dd>
           </div>
         </dl>
 
