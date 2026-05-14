@@ -32,7 +32,7 @@ export default function Footer() {
           <ul>
             <li><Link to="/about">О компании</Link></li>
             <li><Link to="/delivery">Доставка</Link></li>
-            <li><Link to="/price-list">Прайс-лист</Link></li>
+            <li><a href="https://docs.google.com/spreadsheets/d/1OpseU3JsMv1ZPVDZ7VpHGfWppY7QsykH0dx1ZGgmC8w/edit?gid=0#gid=0" target="_blank" rel="noopener noreferrer">Прайс-лист</a></li>
             <li><Link to="/contacts">Контакты</Link></li>
           </ul>
 
@@ -53,7 +53,7 @@ export default function Footer() {
 
       <div className="container footer__bottom">
         <span>© 2026 МеталлоДвор Астана</span>
-        <span>Сайт-каталог без backend и базы данных</span>
+        <span>Астана, Рынок «Эталон», ряд 15, место 13</span>
       </div>
     </footer>
   );
