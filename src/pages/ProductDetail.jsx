@@ -18,7 +18,7 @@ export default function ProductDetail({ onOrder }) {
 
   usePageMeta(
     `${product.title} — МеталлоДвор Астана`,
-    `${product.shortDescription} ${product.size}. Цена: ${product.price}.`,
+    `${product.shortDescription} ${product.size}. Цены в прайс-листе.`,
   );
 
   return (
@@ -48,7 +48,16 @@ export default function ProductDetail({ onOrder }) {
             </div>
             <div>
               <dt>Цена</dt>
-              <dd>{product.price}</dd>
+              <dd>
+                <a
+                  href="https://docs.google.com/spreadsheets/d/1OpseU3JsMv1ZPVDZ7VpHGfWppY7QsykH0dx1ZGgmC8w/edit?gid=0#gid=0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="priceLink"
+                >
+                  см. прайс-лист
+                </a>
+              </dd>
             </div>
             <div>
               <dt>Город</dt>

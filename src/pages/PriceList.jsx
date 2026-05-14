@@ -39,7 +39,16 @@ export default function PriceList({ onOrder }) {
                 </td>
                 <td>{getCategoryTitle(product.category)}</td>
                 <td>{product.size}</td>
-                <td><strong>{product.price}</strong></td>
+                <td>
+                  <a
+                    href="https://docs.google.com/spreadsheets/d/1OpseU3JsMv1ZPVDZ7VpHGfWppY7QsykH0dx1ZGgmC8w/edit?gid=0#gid=0"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="priceLink"
+                  >
+                    см. прайс-лист
+                  </a>
+                </td>
                 <td>
                   <button className="tableButton" type="button" onClick={() => onOrder(product)}>
                     Заказать
