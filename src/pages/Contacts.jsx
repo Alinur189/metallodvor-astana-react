@@ -14,6 +14,7 @@ export default function Contacts() {
   usePageMeta(
     'Контакты — МеталлоДвор Астана',
     'Контакты МеталлоДвор Астана: телефон, WhatsApp, адрес склада и форма обратной связи.',
+    'МеталлоДвор Астана контакты, телефон склада металла Астана, адрес рынок Эталон Астана',
   );
 
   const handleChange = (event) => {
@@ -34,6 +35,7 @@ export default function Contacts() {
         <h1>Свяжитесь с МеталлоДвор Астана</h1>
         <p>Уточните наличие, цену, доставку или отправьте список закупки для расчета.</p>
       </div>
+
 
       <div className="contactsGrid">
         <div className="contactCards">
@@ -56,7 +58,7 @@ export default function Contacts() {
 
           <article className="contactCard">
             <span>Адрес</span>
-            <p>Астана, складская зона, ул. Индустриальная 25</p>
+            <p>Астана, Рынок "Эталон"</p>
           </article>
         </div>
 

@@ -1,17 +1,23 @@
 import { useEffect } from 'react';
 
-export function usePageMeta(title, description) {
+export function usePageMeta(title, description, keywords) {
   useEffect(() => {
     document.title = title;
 
-    let descriptionTag = document.querySelector('meta[name="description"]');
+    setMeta('name', 'description', description);
 
-    if (!descriptionTag) {
-      descriptionTag = document.createElement('meta');
-      descriptionTag.setAttribute('name', 'description');
-      document.head.appendChild(descriptionTag);
+    if (keywords) {
+      setMeta('name', 'keywords', keywords);
     }
+  }, [title, description, keywords]);
+}
 
-    descriptionTag.setAttribute('content', description);
-  }, [title, description]);
+function setMeta(attr, value, content) {
+  let tag = document.querySelector(`meta[${attr}="${value}"]`);
+  if (!tag) {
+    tag = document.createElement('meta');
+    tag.setAttribute(attr, value);
+    document.head.appendChild(tag);
+  }
+  tag.setAttribute('content', content);
 }

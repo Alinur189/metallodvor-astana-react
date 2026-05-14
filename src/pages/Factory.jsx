@@ -21,6 +21,7 @@ export default function Factory() {
   usePageMeta(
     'Наш завод — МеталлоДвор Астана',
     'Собственное производство металлической сетки и металлопроката в Астане. Сварная, кладочная, арматурная сетка, рабица, профильная труба.',
+    'производство сетки Астана, завод металлопрокат, сварная сетка производитель, металлоконструкции Астана',
   );
 
   return (
@@ -44,18 +45,18 @@ export default function Factory() {
       <h2 className="factorySection__title">Фото производства</h2>
       <div className="factoryPhotos">
         {[
-          { src: '/photos/IMG_1686.jpg', alt: 'Производство металлосетки' },
-          { src: '/photos/IMG_1687.jpg', alt: 'Склад металлопроката' },
-          { src: '/photos/IMG_1691.jpg', alt: 'Сварная сетка' },
-          { src: '/photos/IMG_1692.jpg', alt: 'Продукция завода' },
-          { src: '/photos/IMG_1693.jpg', alt: 'Металлоизделия' },
-          { src: '/photos/IMG_1696.jpg', alt: 'Кладочная сетка' },
-          { src: '/photos/IMG_1701.jpg', alt: 'Арматурная сетка' },
-          { src: '/photos/IMG_1702.jpg', alt: 'Сетка рабица' },
-          { src: '/photos/IMG_1705.jpg', alt: 'Металлопрокат Астана' },
+          { file: 'IMG_1686.jpg', alt: 'Производство металлосетки' },
+          { file: 'IMG_1687.jpg', alt: 'Склад металлопроката' },
+          { file: 'IMG_1691.jpg', alt: 'Сварная сетка' },
+          { file: 'IMG_1692.jpg', alt: 'Продукция завода' },
+          { file: 'IMG_1693.jpg', alt: 'Металлоизделия' },
+          { file: 'IMG_1696.jpg', alt: 'Кладочная сетка' },
+          { file: 'IMG_1701.jpg', alt: 'Арматурная сетка' },
+          { file: 'IMG_1702.jpg', alt: 'Сетка рабица' },
+          { file: 'IMG_1705.jpg', alt: 'Металлопрокат Астана' },
         ].map((photo) => (
-          <div className="factoryPhoto" key={photo.src}>
-            <img src={photo.src} alt={photo.alt} loading="lazy" />
+          <div className="factoryPhoto" key={photo.file}>
+            <img src={`${import.meta.env.BASE_URL}photos/${photo.file}`} alt={photo.alt} loading="lazy" />
           </div>
         ))}
       </div>
@@ -63,7 +64,7 @@ export default function Factory() {
       {/* ── Видео о заводе ── */}
       <h2 className="factorySection__title">Видео о заводе</h2>
       <div className="factoryVideo">
-        <video controls playsInline preload="metadata" src="/videos/factory.mov">
+        <video controls playsInline preload="metadata" src={`${import.meta.env.BASE_URL}videos/factory.mov`}>
           Ваш браузер не поддерживает видео.
         </video>
       </div>
