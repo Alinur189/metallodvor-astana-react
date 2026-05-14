@@ -1447,6 +1447,14 @@ dd {
     grid-template-columns: 1fr auto;
   }
 
+  .logo__img {
+    height: 72px;
+  }
+
+  .logo--footer .logo__img {
+    height: 80px;
+  }
+
   .searchBar {
     grid-column: 1 / -1;
     order: 3;
@@ -1558,6 +1566,14 @@ dd {
   .logo__mark {
     width: 44px;
     height: 44px;
+  }
+
+  .logo__img {
+    height: 60px;
+  }
+
+  .logo--footer .logo__img {
+    height: 70px;
   }
 
   .searchBar {
