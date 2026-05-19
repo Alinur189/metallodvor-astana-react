@@ -49,7 +49,7 @@ export default function Contacts() {
 
           <article className="contactCard">
             <span>WhatsApp</span>
-            <a href="https://wa.me/77771234567" target="_blank" rel="noreferrer">
+            <a href="https://wa.me/77015877127" target="_blank" rel="noreferrer">
               Написать в WhatsApp
             </a>
           </article>
