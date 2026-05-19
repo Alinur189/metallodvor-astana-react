@@ -43,15 +43,14 @@ export default function Contacts() {
       <div className="contactsGrid">
         <div className="contactCards">
           <article className="contactCard">
-            <span>Қуаныш — общие вопросы</span>
+            <span>Қуаныш</span>
             <a href="tel:+77021665051">+7 702 166 5051</a>
           </article>
 
           <article className="contactCard">
-            <span>Завод и сетка</span>
+            <span>Нуржан - вопросы о сетке</span>
             <a href="tel:+77015877127">+7 701 587 7127</a>
           </article>
-
           <article className="contactCard">
             <span>WhatsApp</span>
             <a href="https://wa.me/77021665051" target="_blank" rel="noreferrer">
