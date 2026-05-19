@@ -14,6 +14,8 @@ import Delivery from './pages/Delivery.jsx';
 import Contacts from './pages/Contacts.jsx';
 import PriceList from './pages/PriceList.jsx';
 import Factory from './pages/Factory.jsx';
+import GuideWeldedMesh from './pages/GuideWeldedMesh.jsx';
+import GuideMasonryMesh from './pages/GuideMasonryMesh.jsx';
 
 export default function App() {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -40,6 +42,8 @@ export default function App() {
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/price-list" element={<PriceList onOrder={openOrderModal} />} />
           <Route path="/factory" element={<Factory />} />
+          <Route path="/guide/svarnaya-setka-dlya-styazhki" element={<GuideWeldedMesh />} />
+          <Route path="/guide/kladochnaya-setka" element={<GuideMasonryMesh />} />
         </Routes>
       </main>
       <Footer />

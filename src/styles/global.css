@@ -1766,3 +1766,46 @@ dd {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ── Article/Guide pages ── */
+.articleContent {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.articleContent h2 {
+  font-size: 24px;
+  margin: 36px 0 12px;
+  color: var(--blue-950);
+}
+
+.articleContent h3 {
+  font-size: 18px;
+  margin: 24px 0 8px;
+  color: var(--blue-800);
+}
+
+.articleContent p,
+.articleContent li {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--gray-700);
+  margin-bottom: 12px;
+}
+
+.articleContent ul {
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.articleContent li {
+  margin-bottom: 6px;
+}
+
+.articleCTA {
+  display: flex;
+  gap: 12px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
