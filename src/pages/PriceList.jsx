@@ -67,7 +67,7 @@ export default function PriceList({ onOrder }) {
           <h2>Нужен прайс для закупки?</h2>
           <p>Позвоните или отправьте список — подготовим расчет по вашему объему.</p>
         </div>
-        <a className="btn btn--primary" href="tel:+77015877127">Позвонить</a>
+        <a className="btn btn--primary" href="tel:+77021665051">Позвонить</a>
       </div>
     </section>
   );

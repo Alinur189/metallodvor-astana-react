@@ -72,7 +72,7 @@ export default function GuideMasonryMesh() {
 
         <div className="articleCTA">
           <Link className="btn btn--primary" to="/catalog">Перейти в каталог</Link>
-          <a className="btn btn--light" href="tel:+77015877127">Получить консультацию</a>
+          <a className="btn btn--light" href="tel:+77021665051">Получить консультацию</a>
         </div>
       </div>
     </section>

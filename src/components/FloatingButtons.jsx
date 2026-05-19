@@ -3,12 +3,12 @@ export default function FloatingButtons() {
 
   return (
     <div className="floatingButtons" aria-label="Быстрые контакты">
-      <a className="floatingButton floatingButton--phone" href="tel:+77015877127" aria-label="Позвонить">
+      <a className="floatingButton floatingButton--phone" href="tel:+77021665051" aria-label="Позвонить">
         ☎
       </a>
       <a
         className="floatingButton floatingButton--whatsapp"
-        href={`https://wa.me/+77015877127?text=${whatsappText}`}
+        href={`https://wa.me/+77021665051?text=${whatsappText}`}
         target="_blank"
         rel="noreferrer"
         aria-label="Написать в WhatsApp"

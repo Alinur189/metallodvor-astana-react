@@ -73,10 +73,10 @@ export default function ProductDetail({ onOrder }) {
             <button className="btn btn--primary" type="button" onClick={() => onOrder(product)}>
               Заказать
             </button>
-            <a className="btn btn--ghost" href="tel:+77015877127">Позвонить</a>
+            <a className="btn btn--ghost" href="tel:+77021665051">Позвонить</a>
             <a
               className="btn btn--whatsapp"
-              href={`https://wa.me/77015877127?text=${encodeURIComponent(`Здравствуйте! Интересует "${product.title}" (${product.size}). Уточните, пожалуйста, цену и наличие.`)}`}
+              href={`https://wa.me/77021665051?text=${encodeURIComponent(`Здравствуйте! Интересует "${product.title}" (${product.size}). Уточните, пожалуйста, цену и наличие.`)}`}
               target="_blank"
               rel="noopener noreferrer"
             >
