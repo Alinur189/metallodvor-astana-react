@@ -44,7 +44,7 @@ export default function Footer() {
         <div>
           <h3>Контакты</h3>
           <ul>
-            <li><a href="tel:+77021665051">+7 702 166 5051</a> — общие вопросы</li>
+            <li><a href="tel:+77021665051">+7 702 166 5051</a></li>
             <li><a href="tel:+77015877127">+7 701 587 7127</a> — завод и сетка</li>
             <li><a href="mailto:metallodvorastana@gmail.com">metallodvorastana@gmail.com</a></li>
             <li>Астана, Рынок "Эталон ряд 15, место 13"</li>
