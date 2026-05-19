@@ -76,11 +76,11 @@ export default function ProductDetail({ onOrder }) {
             <a className="btn btn--ghost" href="tel:+77015877127">Позвонить</a>
             <a
               className="btn btn--whatsapp"
-              href="https://wa.me/77771234567"
+              href={`https://wa.me/77015877127?text=${encodeURIComponent(`Здравствуйте! Интересует "${product.title}" (${product.size}). Уточните, пожалуйста, цену и наличие.`)}`}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
-              WhatsApp
+              Узнать цену в WhatsApp
             </a>
           </div>
         </article>
