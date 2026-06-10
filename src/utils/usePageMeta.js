@@ -3,6 +3,12 @@ import { useEffect } from 'react';
 const BASE_URL = 'https://metallodvorastana.kz';
 
 export function usePageMeta(title, description, keywords, path) {
+  // При пререндере (scripts/prerender.mjs) эффекты не выполняются,
+  // поэтому мета-данные страницы передаются наружу через globalThis.
+  if (import.meta.env.SSR) {
+    globalThis.__SSR_PAGE_META__ = { title, description, keywords, path };
+  }
+
   useEffect(() => {
     document.title = title;
 
