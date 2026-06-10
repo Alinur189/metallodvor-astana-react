@@ -2,9 +2,14 @@ import { Link } from 'react-router-dom';
 import { getCategoryTitle } from '../data/categories.js';
 
 export default function ProductCard({ product, onOrder }) {
+  const isPhoto = !product.image.endsWith('.svg');
+
   return (
     <article className="productCard">
-      <Link to={`/product/${product.id}`} className="productCard__imageWrap">
+      <Link
+        to={`/product/${product.id}`}
+        className={`productCard__imageWrap ${isPhoto ? 'productCard__imageWrap--photo' : ''}`}
+      >
         <img src={product.image} alt={product.title} loading="lazy" />
       </Link>
 

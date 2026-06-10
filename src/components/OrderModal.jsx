@@ -6,6 +6,23 @@ const initialForm = {
   comment: '',
 };
 
+const WHATSAPP_NUMBER = '77021665051';
+
+function buildWhatsAppLink(product, form) {
+  const lines = [
+    'Здравствуйте! Хочу оформить заявку с сайта.',
+    `Товар: ${product.title} (${product.size})`,
+    `Имя: ${form.name}`,
+    `Телефон: ${form.phone}`,
+  ];
+
+  if (form.comment.trim()) {
+    lines.push(`Комментарий: ${form.comment.trim()}`);
+  }
+
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`;
+}
+
 export default function OrderModal({ product, onClose }) {
   const [form, setForm] = useState(initialForm);
   const [isSent, setIsSent] = useState(false);
@@ -33,6 +50,7 @@ export default function OrderModal({ product, onClose }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    window.open(buildWhatsAppLink(product, form), '_blank', 'noopener');
     setIsSent(true);
   };
 
@@ -52,10 +70,17 @@ export default function OrderModal({ product, onClose }) {
         {isSent ? (
           <div className="orderModal__success">
             <span>✓</span>
-            <h2>Заявка создана</h2>
+            <h2>Заявка сформирована</h2>
             <p>
-              Это демонстрационный frontend. После подключения backend заявку можно будет отправлять
-              менеджеру или сохранять в CRM.
+              Мы открыли WhatsApp с текстом вашей заявки — просто нажмите «Отправить» в чате,
+              и менеджер ответит в рабочее время.
+            </p>
+            <p>
+              Чат не открылся?{' '}
+              <a href={buildWhatsAppLink(product, form)} target="_blank" rel="noopener noreferrer">
+                Открыть WhatsApp вручную
+              </a>{' '}
+              или позвоните: <a href="tel:+77021665051">+7 702 166 5051</a>
             </p>
             <button className="btn btn--primary" type="button" onClick={onClose}>
               Понятно

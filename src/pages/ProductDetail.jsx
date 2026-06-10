@@ -32,7 +32,7 @@ export default function ProductDetail({ onOrder }) {
       </nav>
 
       <div className="productDetail__grid">
-        <div className="productDetail__image">
+        <div className={`productDetail__image ${product.image.endsWith('.svg') ? '' : 'productDetail__image--photo'}`}>
           <img src={product.image} alt={product.title} />
         </div>
 

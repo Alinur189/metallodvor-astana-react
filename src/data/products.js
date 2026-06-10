@@ -16,7 +16,7 @@ export const products = [
     category: 'setka-svarnaya',
     size: '2×3 м, Ø 3 мм',
     price: 'от 5 900 ₸',
-    image: '/images/welded-card.svg',
+    image: '/images/setka-svarnaya-karty.jpg',
     shortDescription: 'Жесткая сварная карта для армирования стяжки, дорожек и площадок.',
     fullDescription:
       'Сварная сетка в картах удобна для быстрой укладки на объекте. Используется при армировании бетонных оснований, полов, дорожек, площадок и небольших монолитных конструкций.',
@@ -27,7 +27,7 @@ export const products = [
     category: 'setka-kladochnaya',
     size: '0.38×2 м, Ø 3 мм',
     price: 'от 850 ₸',
-    image: '/images/masonry-mesh.svg',
+    image: '/images/setka-kladochnaya.jpg',
     shortDescription: 'Кладочная сетка для усиления кирпичной и блочной кладки.',
     fullDescription:
       'Кладочная сетка помогает повысить прочность стен, перегородок и облицовки. Подходит для строительства из кирпича, газоблока и других стеновых материалов.',
@@ -71,7 +71,7 @@ export const products = [
     category: 'setka-armaturnaya',
     size: '2×6 м, Ø 4 мм',
     price: 'от 9 800 ₸',
-    image: '/images/rebar-mesh.svg',
+    image: '/images/setka-armaturnaya.jpg',
     shortDescription: 'Арматурная сетка для стяжки, плит и фундаментных работ.',
     fullDescription:
       'Арматурная сетка используется для усиления бетонных конструкций: стяжек, плит, фундаментов, дорожных оснований и промышленных полов.',
@@ -104,7 +104,7 @@ export const products = [
     category: 'provoloka-vyazalnaya',
     size: 'моток 5 кг',
     price: 'от 3 900 ₸',
-    image: '/images/wire.svg',
+    image: '/images/provoloka-vyazalnaya.jpg',
     shortDescription: 'Мягкая вязальная проволока для фиксации арматуры.',
     fullDescription:
       'Вязальная проволока применяется для соединения арматуры при монолитных работах. Удобна для ручной вязки и использования с инструментом.',

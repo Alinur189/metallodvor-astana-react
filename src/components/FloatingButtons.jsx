@@ -8,7 +8,7 @@ export default function FloatingButtons() {
       </a>
       <a
         className="floatingButton floatingButton--whatsapp"
-        href={`https://wa.me/+77021665051?text=${whatsappText}`}
+        href={`https://wa.me/77021665051?text=${whatsappText}`}
         target="_blank"
         rel="noreferrer"
         aria-label="Написать в WhatsApp"
