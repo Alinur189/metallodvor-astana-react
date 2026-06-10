@@ -63,6 +63,28 @@ export default function Home({ onOrder }) {
         </div>
       </section>
 
+      <section className="section container">
+        <div className="sectionHead">
+          <div>
+            <span className="eyebrow">Полезные статьи</span>
+            <h2>Руководства по выбору металлопродукции</h2>
+          </div>
+        </div>
+
+        <div className="guideGrid">
+          <Link className="guideCard" to="/guide/svarnaya-setka-dlya-styazhki">
+            <strong>Как выбрать сварную сетку для стяжки пола</strong>
+            <p>Размеры ячейки, диаметр проволоки, расчёт количества — всё что нужно знать перед покупкой.</p>
+            <span>Читать →</span>
+          </Link>
+          <Link className="guideCard" to="/guide/kladochnaya-setka">
+            <strong>Кладочная сетка: виды, размеры и применение</strong>
+            <p>Как правильно выбрать кладочную сетку для кирпичной и блочной кладки.</p>
+            <span>Читать →</span>
+          </Link>
+        </div>
+      </section>
+
       <section className="container ctaBanner">
         <div>
           <span className="eyebrow">Для подрядчиков и снабжения</span>
