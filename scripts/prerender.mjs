@@ -61,6 +61,13 @@ for (const route of routes) {
         `$1${escapeHtml(meta.keywords)}$2`,
       );
     }
+
+    if (meta.jsonLd) {
+      // Экранируем `<`, чтобы содержимое не могло закрыть тег <script>.
+      const json = JSON.stringify(meta.jsonLd).replace(/</g, '\\u003c');
+      const script = `<script type="application/ld+json" data-page-jsonld>${json}</script>`;
+      page = page.replace('</head>', `    ${script}\n  </head>`);
+    }
   }
 
   // `/catalog/armatura` → dist/catalog/armatura.html: GitHub Pages отдаёт

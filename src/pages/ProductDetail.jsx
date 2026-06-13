@@ -4,6 +4,34 @@ import { getCategoryTitle } from '../data/categories.js';
 import { getProductById, products } from '../data/products.js';
 import { usePageMeta } from '../utils/usePageMeta.js';
 
+const BASE_URL = 'https://metallodvorastana.kz';
+
+function buildProductJsonLd(product) {
+  // Цена в данных хранится как «от 14 500 ₸» — берём числовую часть
+  // как стартовую цену предложения.
+  const priceDigits = String(product.price || '').replace(/\D/g, '');
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.title,
+    description: product.fullDescription,
+    image: `${BASE_URL}${product.image}`,
+    category: getCategoryTitle(product.category),
+    brand: { '@type': 'Brand', name: 'МеталлоДвор' },
+    ...(priceDigits && {
+      offers: {
+        '@type': 'Offer',
+        priceCurrency: 'KZT',
+        price: priceDigits,
+        availability: 'https://schema.org/InStock',
+        url: `${BASE_URL}/product/${product.id}`,
+        seller: { '@type': 'Organization', name: 'МеталлоДвор Астана' },
+      },
+    }),
+  };
+}
+
 export default function ProductDetail({ onOrder }) {
   const { id } = useParams();
   const product = getProductById(id);
@@ -19,6 +47,9 @@ export default function ProductDetail({ onOrder }) {
   usePageMeta(
     `${product.title} — МеталлоДвор Астана`,
     `${product.shortDescription} ${product.size}. Цены в прайс-листе.`,
+    undefined,
+    `/product/${product.id}`,
+    buildProductJsonLd(product),
   );
 
   return (
