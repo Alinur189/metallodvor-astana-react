@@ -3,34 +3,7 @@ import ProductCard from '../components/ProductCard.jsx';
 import { getCategoryTitle } from '../data/categories.js';
 import { getProductById, products } from '../data/products.js';
 import { usePageMeta } from '../utils/usePageMeta.js';
-
-const BASE_URL = 'https://metallodvorastana.kz';
-
-function buildProductJsonLd(product) {
-  // Цена в данных хранится как «от 14 500 ₸» — берём числовую часть
-  // как стартовую цену предложения.
-  const priceDigits = String(product.price || '').replace(/\D/g, '');
-
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Product',
-    name: product.title,
-    description: product.fullDescription,
-    image: `${BASE_URL}${product.image}`,
-    category: getCategoryTitle(product.category),
-    brand: { '@type': 'Brand', name: 'МеталлоДвор' },
-    ...(priceDigits && {
-      offers: {
-        '@type': 'Offer',
-        priceCurrency: 'KZT',
-        price: priceDigits,
-        availability: 'https://schema.org/InStock',
-        url: `${BASE_URL}/product/${product.id}`,
-        seller: { '@type': 'Organization', name: 'МеталлоДвор Астана' },
-      },
-    }),
-  };
-}
+import { buildBreadcrumbJsonLd, buildProductJsonLd } from '../utils/jsonLd.js';
 
 export default function ProductDetail({ onOrder }) {
   const { id } = useParams();
@@ -49,7 +22,15 @@ export default function ProductDetail({ onOrder }) {
     `${product.shortDescription} ${product.size}. Цены в прайс-листе.`,
     undefined,
     `/product/${product.id}`,
-    buildProductJsonLd(product),
+    [
+      buildProductJsonLd(product),
+      buildBreadcrumbJsonLd([
+        { name: 'Главная', path: '/' },
+        { name: 'Каталог', path: '/catalog' },
+        { name: getCategoryTitle(product.category), path: `/catalog/${product.category}` },
+        { name: product.title, path: `/product/${product.id}` },
+      ]),
+    ],
   );
 
   return (

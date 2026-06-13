@@ -5,6 +5,7 @@ import SidebarCatalog from '../components/SidebarCatalog.jsx';
 import { getCategoryBySlug } from '../data/categories.js';
 import { getProductsByCategory } from '../data/products.js';
 import { usePageMeta } from '../utils/usePageMeta.js';
+import { buildBreadcrumbJsonLd } from '../utils/jsonLd.js';
 
 export default function Category({ onOrder }) {
   const { category: categorySlug } = useParams();
@@ -19,6 +20,13 @@ export default function Category({ onOrder }) {
   usePageMeta(
     `${category.title} — купить в Астане | МеталлоДвор`,
     `${category.description} Цены и наличие в МеталлоДвор Астана.`,
+    undefined,
+    `/catalog/${category.slug}`,
+    buildBreadcrumbJsonLd([
+      { name: 'Главная', path: '/' },
+      { name: 'Каталог', path: '/catalog' },
+      { name: category.title, path: `/catalog/${category.slug}` },
+    ]),
   );
 
   return (
