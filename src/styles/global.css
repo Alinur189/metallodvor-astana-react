@@ -1265,6 +1265,16 @@ dd {
   font-size: 14px;
 }
 
+.footer__credits {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 13px;
+}
+
+.footer__credits a {
+  color: inherit;
+  text-decoration: underline;
+}
+
 .floatingButtons {
   position: fixed;
   right: 24px;

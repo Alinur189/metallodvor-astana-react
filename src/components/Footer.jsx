@@ -55,6 +55,13 @@ export default function Footer() {
       <div className="container footer__bottom">
         <span>© 2026 МеталлоДвор Астана</span>
         <span>Астана, Рынок «Эталон», ряд 15, место 13</span>
+        <span className="footer__credits">
+          Фото товаров:{' '}
+          <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener noreferrer">Wikimedia Commons</a>
+          {' '}(
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>
+          )
+        </span>
       </div>
     </footer>
   );

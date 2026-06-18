@@ -5,7 +5,7 @@ export const products = [
     category: 'setka-svarnaya',
     size: '1.5×25 м, Ø 1.8 мм',
     price: 'от 14 500 ₸',
-    image: '/images/welded-mesh.svg',
+    image: '/images/setka-svarnaya-rulon.jpg',
     shortDescription: 'Универсальная рулонная сетка для ограждений, клеток и легкого армирования.',
     fullDescription:
       'Оцинкованная сварная сетка с ячейкой 50×50 мм подходит для строительных работ, ограждений, складских зон и хозяйственных задач. Защитное покрытие помогает металлу дольше сохранять аккуратный внешний вид.',
@@ -38,7 +38,7 @@ export const products = [
     category: 'setka-kladochnaya',
     size: '0.5×2 м, Ø 4 мм',
     price: 'от 1 450 ₸',
-    image: '/images/masonry-strong.svg',
+    image: '/images/setka-kladochnaya-usilennaya.jpg',
     shortDescription: 'Усиленный вариант для объектов с повышенными требованиями к прочности.',
     fullDescription:
       'Усиленная кладочная сетка применяется там, где нужна дополнительная жесткость конструкции. Подходит для частного и коммерческого строительства.',
@@ -49,7 +49,7 @@ export const products = [
     category: 'setka-rabitsa',
     size: '1.5×10 м, Ø 2 мм',
     price: 'от 12 500 ₸',
-    image: '/images/chain-link.svg',
+    image: '/images/setka-rabitsa.jpg',
     shortDescription: 'Классическая сетка для заборов, временных ограждений и складских зон.',
     fullDescription:
       'Оцинкованная рабица — практичное решение для ограждения участков, строительных площадок и складов. Легко монтируется и подходит для эксплуатации на улице.',
@@ -60,7 +60,7 @@ export const products = [
     category: 'setka-rabitsa',
     size: '1.8×10 м, Ø 2.5 мм',
     price: 'от 19 900 ₸',
-    image: '/images/chain-link-pvc.svg',
+    image: '/images/setka-rabitsa-pvh.jpg',
     shortDescription: 'Аккуратная рабица с цветным покрытием для заборов и частных территорий.',
     fullDescription:
       'Сетка рабица с ПВХ покрытием выглядит аккуратно и лучше защищена от внешней среды. Хорошо подходит для частных участков, спортивных площадок и коммерческих территорий.',
@@ -82,7 +82,7 @@ export const products = [
     category: 'setka-armaturnaya',
     size: '2×6 м, Ø 5 мм',
     price: 'от 15 700 ₸',
-    image: '/images/rebar-heavy.svg',
+    image: '/images/setka-armaturnaya-150.jpg',
     shortDescription: 'Прочная карта для монолитных и промышленных работ.',
     fullDescription:
       'Арматурная сетка с диаметром 5 мм применяется на объектах, где требуется повышенная несущая способность и стабильная геометрия армирования.',
@@ -93,7 +93,7 @@ export const products = [
     category: 'setka-pvl',
     size: '1×2 м',
     price: 'от 27 500 ₸',
-    image: '/images/expanded-metal.svg',
+    image: '/images/list-pvl.jpg',
     shortDescription: 'Просечно-вытяжной лист для настилов, лестниц и защитных экранов.',
     fullDescription:
       'ПВЛ используется в производстве настилов, ступеней, площадок обслуживания, вентиляционных экранов и элементов металлоконструкций.',
@@ -115,7 +115,7 @@ export const products = [
     category: 'armatura',
     size: '11.7 м',
     price: 'от 320 ₸/м',
-    image: '/images/rebar.svg',
+    image: '/images/armatura.jpg',
     shortDescription: 'Ходовая арматура для фундамента, плит и каркасов.',
     fullDescription:
       'Арматура А500С диаметром 12 мм используется в частном и промышленном строительстве. Возможна комплектация под объект и доставка по Астане.',
@@ -126,7 +126,7 @@ export const products = [
     category: 'profilnaya-truba',
     size: '6 м',
     price: 'от 2 250 ₸/м',
-    image: '/images/profile-pipe.svg',
+    image: '/images/profilnaya-truba.jpg',
     shortDescription: 'Профильная труба для каркасов, ворот, навесов и складских конструкций.',
     fullDescription:
       'Профильная труба 40×20×2 мм подходит для изготовления легких и средних металлоконструкций. Доступна нарезка и подбор объема под задачу.',
