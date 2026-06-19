@@ -2,11 +2,11 @@ import { useEffect } from 'react';
 
 const BASE_URL = 'https://metallodvorastana.kz';
 
-export function usePageMeta(title, description, keywords, path, jsonLd) {
+export function usePageMeta(title, description, keywords, path, jsonLd, image) {
   // При пререндере (scripts/prerender.mjs) эффекты не выполняются,
   // поэтому мета-данные страницы передаются наружу через globalThis.
   if (import.meta.env.SSR) {
-    globalThis.__SSR_PAGE_META__ = { title, description, keywords, path, jsonLd };
+    globalThis.__SSR_PAGE_META__ = { title, description, keywords, path, jsonLd, image };
   }
 
   // jsonLd — объект, который пересоздаётся на каждый рендер; сериализуем,
@@ -17,16 +17,29 @@ export function usePageMeta(title, description, keywords, path, jsonLd) {
     document.title = title;
 
     setMeta('name', 'description', description);
+    setMeta('property', 'og:title', title);
+    setMeta('property', 'og:description', description);
+    setMeta('name', 'twitter:title', title);
+    setMeta('name', 'twitter:description', description);
 
     if (keywords) {
       setMeta('name', 'keywords', keywords);
     }
 
     const canonicalPath = path || window.location.pathname;
-    setCanonical(`${BASE_URL}${canonicalPath}`);
+    const canonical = `${BASE_URL}${canonicalPath}`;
+    setCanonical(canonical);
+    setMeta('property', 'og:url', canonical);
+
+    // image — абсолютный URL изображения для превью ссылок (OG / Twitter).
+    if (image) {
+      const absoluteImage = image.startsWith('http') ? image : `${BASE_URL}${image}`;
+      setMeta('property', 'og:image', absoluteImage);
+      setMeta('name', 'twitter:image', absoluteImage);
+    }
 
     setJsonLd(jsonLdString);
-  }, [title, description, keywords, path, jsonLdString]);
+  }, [title, description, keywords, path, jsonLdString, image]);
 }
 
 function setMeta(attr, value, content) {

@@ -1846,6 +1846,52 @@ dd {
   flex-wrap: wrap;
 }
 
+/* ── FAQ accordion on guide pages ── */
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.faqItem {
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  background: #fff;
+  padding: 4px 20px;
+}
+
+.faqItem summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 14px 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.faqItem summary::-webkit-details-marker {
+  display: none;
+}
+
+.faqItem summary::after {
+  content: '+';
+  font-size: 1.4em;
+  line-height: 1;
+  color: var(--gray-400, #9ca3af);
+  transition: transform 0.2s ease;
+}
+
+.faqItem[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faqItem p {
+  margin: 0 0 16px;
+}
+
 /* ── Guide cards on Home page ── */
 .guideGrid {
   display: grid;

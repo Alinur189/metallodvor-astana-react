@@ -16,6 +16,19 @@ export function buildBreadcrumbJsonLd(items) {
   };
 }
 
+// items: [{ question, answer }] — должны совпадать с видимым FAQ на странице.
+export function buildFaqJsonLd(items) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: items.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: { '@type': 'Answer', text: item.answer },
+    })),
+  };
+}
+
 export function buildProductJsonLd(product) {
   // Цена в данных хранится как «от 14 500 ₸» — берём числовую часть
   // как стартовую цену предложения.

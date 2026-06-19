@@ -31,6 +31,7 @@ export default function ProductDetail({ onOrder }) {
         { name: product.title, path: `/product/${product.id}` },
       ]),
     ],
+    product.image,
   );
 
   return (

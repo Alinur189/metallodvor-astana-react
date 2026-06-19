@@ -53,13 +53,24 @@ for (const route of routes) {
       .replace(/(<link rel="canonical" href=")[^"]*(")/, `$1${canonical}$2`)
       .replace(/(<meta property="og:title" content=")[^"]*(")/, `$1${title}$2`)
       .replace(/(<meta property="og:description" content=")[^"]*(")/, `$1${description}$2`)
-      .replace(/(<meta property="og:url" content=")[^"]*(")/, `$1${canonical}$2`);
+      .replace(/(<meta property="og:url" content=")[^"]*(")/, `$1${canonical}$2`)
+      .replace(/(<meta name="twitter:title" content=")[^"]*(")/, `$1${title}$2`)
+      .replace(/(<meta name="twitter:description" content=")[^"]*(")/, `$1${description}$2`);
 
     if (meta.keywords) {
       page = page.replace(
         /(<meta name="keywords" content=")[^"]*(")/,
         `$1${escapeHtml(meta.keywords)}$2`,
       );
+    }
+
+    if (meta.image) {
+      const img = escapeHtml(
+        meta.image.startsWith('http') ? meta.image : `${BASE_URL}${meta.image}`,
+      );
+      page = page
+        .replace(/(<meta property="og:image" content=")[^"]*(")/, `$1${img}$2`)
+        .replace(/(<meta name="twitter:image" content=")[^"]*(")/, `$1${img}$2`);
     }
 
     if (meta.jsonLd) {
