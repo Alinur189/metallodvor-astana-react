@@ -38,7 +38,7 @@ const escapeHtml = (s) =>
 const template = await readFile(path.join(dist, 'index.html'), 'utf8');
 
 for (const route of routes) {
-  const { html, meta } = render(route);
+  const { html, meta } = await render(route);
 
   let page = template.replace('<div id="root"></div>', `<div id="root">${html}</div>`);
 

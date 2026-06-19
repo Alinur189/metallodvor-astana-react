@@ -1,21 +1,11 @@
-import { useState } from 'react';
+import { Suspense, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header.jsx';
 import Footer from './components/Footer.jsx';
 import FloatingButtons from './components/FloatingButtons.jsx';
 import CityPopup from './components/CityPopup.jsx';
 import OrderModal from './components/OrderModal.jsx';
-import Home from './pages/Home.jsx';
-import Catalog from './pages/Catalog.jsx';
-import Category from './pages/Category.jsx';
-import ProductDetail from './pages/ProductDetail.jsx';
-import About from './pages/About.jsx';
-import Delivery from './pages/Delivery.jsx';
-import Contacts from './pages/Contacts.jsx';
-import PriceList from './pages/PriceList.jsx';
-import Factory from './pages/Factory.jsx';
-import GuideWeldedMesh from './pages/GuideWeldedMesh.jsx';
-import GuideMasonryMesh from './pages/GuideMasonryMesh.jsx';
+import { routes } from './routes.jsx';
 
 export default function App() {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -32,19 +22,13 @@ export default function App() {
     <div className="app">
       <Header />
       <main>
-        <Routes>
-          <Route path="/" element={<Home onOrder={openOrderModal} />} />
-          <Route path="/catalog" element={<Catalog onOrder={openOrderModal} />} />
-          <Route path="/catalog/:category" element={<Category onOrder={openOrderModal} />} />
-          <Route path="/product/:id" element={<ProductDetail onOrder={openOrderModal} />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/delivery" element={<Delivery />} />
-          <Route path="/contacts" element={<Contacts />} />
-          <Route path="/price-list" element={<PriceList onOrder={openOrderModal} />} />
-          <Route path="/factory" element={<Factory />} />
-          <Route path="/guide/svarnaya-setka-dlya-styazhki" element={<GuideWeldedMesh />} />
-          <Route path="/guide/kladochnaya-setka" element={<GuideMasonryMesh />} />
-        </Routes>
+        <Suspense fallback={null}>
+          <Routes>
+            {routes.map(({ path, Component }) => (
+              <Route key={path} path={path} element={<Component onOrder={openOrderModal} />} />
+            ))}
+          </Routes>
+        </Suspense>
       </main>
       <Footer />
       <FloatingButtons />
