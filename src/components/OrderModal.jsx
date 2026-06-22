@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { trackEvent } from '../utils/analytics.js';
 
 const initialForm = {
   name: '',
@@ -50,6 +51,11 @@ export default function OrderModal({ product, onClose }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    trackEvent('order_submit', {
+      product: product.title,
+      product_size: product.size,
+      product_category: product.category,
+    });
     window.open(buildWhatsAppLink(product, form), '_blank', 'noopener');
     setIsSent(true);
   };

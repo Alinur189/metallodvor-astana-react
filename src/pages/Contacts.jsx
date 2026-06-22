@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { usePageMeta } from '../utils/usePageMeta.js';
+import { trackEvent } from '../utils/analytics.js';
 
 const initialForm = {
   name: '',
@@ -7,9 +8,26 @@ const initialForm = {
   message: '',
 };
 
+const WHATSAPP_NUMBER = '77021665051';
+
+function buildWhatsAppLink(form) {
+  const lines = [
+    'Здравствуйте! Заявка с сайта (форма обратной связи).',
+    `Имя: ${form.name}`,
+    `Телефон: ${form.phone}`,
+  ];
+
+  if (form.message.trim()) {
+    lines.push(`Сообщение: ${form.message.trim()}`);
+  }
+
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`;
+}
+
 export default function Contacts() {
   const [form, setForm] = useState(initialForm);
   const [sent, setSent] = useState(false);
+  const [submittedLink, setSubmittedLink] = useState('');
 
   usePageMeta(
     'Контакты — купить сварную сетку в Астане | МеталлоДвор',
@@ -25,6 +43,10 @@ export default function Contacts() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const link = buildWhatsAppLink(form);
+    trackEvent('form_submit', { form: 'contacts' });
+    window.open(link, '_blank', 'noopener');
+    setSubmittedLink(link);
     setSent(true);
     setForm(initialForm);
   };
@@ -71,7 +93,16 @@ export default function Contacts() {
 
         <form className="form contactForm" onSubmit={handleSubmit}>
           <h2>Форма обратной связи</h2>
-          {sent && <p className="successMessage">Заявка подготовлена. После подключения backend она будет отправляться менеджеру.</p>}
+          {sent && (
+            <p className="successMessage">
+              Мы открыли WhatsApp с текстом вашей заявки — нажмите «Отправить» в чате.{' '}
+              Чат не открылся?{' '}
+              <a href={submittedLink} target="_blank" rel="noopener noreferrer">
+                Открыть WhatsApp вручную
+              </a>{' '}
+              или позвоните: <a href="tel:+77021665051">+7 702 166 5051</a>.
+            </p>
+          )}
 
           <label>
             Имя

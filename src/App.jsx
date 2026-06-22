@@ -5,6 +5,7 @@ import Footer from './components/Footer.jsx';
 import FloatingButtons from './components/FloatingButtons.jsx';
 import CityPopup from './components/CityPopup.jsx';
 import OrderModal from './components/OrderModal.jsx';
+import Analytics from './components/Analytics.jsx';
 import { routes } from './routes.jsx';
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
 
   return (
     <div className="app">
+      <Analytics />
       <Header />
       <main>
         <Suspense fallback={null}>
