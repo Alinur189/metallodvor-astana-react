@@ -1,8 +1,9 @@
 import { Link, useSearchParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard.jsx';
 import SidebarCatalog from '../components/SidebarCatalog.jsx';
-import { categories, getCategoryTitle } from '../data/categories.js';
+import { categories } from '../data/categories.js';
 import { products } from '../data/products.js';
+import { searchProducts } from '../utils/fuzzySearch.js';
 import { usePageMeta } from '../utils/usePageMeta.js';
 
 export default function Catalog({ onOrder }) {
@@ -17,20 +18,12 @@ export default function Catalog({ onOrder }) {
     '/catalog',
   );
 
-  const normalizedQuery = query.trim().toLowerCase();
+  const normalizedQuery = query.trim();
 
-  const filteredProducts = products.filter((product) => {
-    const categoryTitle = getCategoryTitle(product.category).toLowerCase();
-    const matchesQuery =
-      !normalizedQuery ||
-      product.title.toLowerCase().includes(normalizedQuery) ||
-      product.shortDescription.toLowerCase().includes(normalizedQuery) ||
-      categoryTitle.includes(normalizedQuery);
-
-    const matchesCategory = !activeCategory || product.category === activeCategory;
-
-    return matchesQuery && matchesCategory;
-  });
+  const searchedProducts = normalizedQuery ? searchProducts(normalizedQuery) : products;
+  const filteredProducts = searchedProducts.filter(
+    (product) => !activeCategory || product.category === activeCategory,
+  );
 
   const updateCategory = (slug) => {
     const nextParams = new URLSearchParams(searchParams);
