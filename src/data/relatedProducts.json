@@ -1,0 +1,62 @@
+{
+  "svarnaya-50x50-18": [
+    "rabitsa-50x50-15",
+    "kladochnaya-50x50-30",
+    "kladochnaya-100x100-40"
+  ],
+  "svarnaya-100x100-30": [
+    "svarnaya-50x50-18",
+    "armaturnaya-150x150-50",
+    "rabitsa-50x50-15"
+  ],
+  "kladochnaya-50x50-30": [
+    "armaturnaya-100x100-40",
+    "kladochnaya-100x100-40",
+    "svarnaya-50x50-18"
+  ],
+  "kladochnaya-100x100-40": [
+    "kladochnaya-50x50-30",
+    "truba-40x20x2",
+    "svarnaya-50x50-18"
+  ],
+  "rabitsa-50x50-15": [
+    "svarnaya-50x50-18",
+    "rabitsa-pvc-55x55",
+    "kladochnaya-50x50-30"
+  ],
+  "rabitsa-pvc-55x55": [
+    "rabitsa-50x50-15",
+    "svarnaya-50x50-18",
+    "svarnaya-100x100-30"
+  ],
+  "armaturnaya-100x100-40": [
+    "kladochnaya-50x50-30",
+    "kladochnaya-100x100-40",
+    "armaturnaya-150x150-50"
+  ],
+  "armaturnaya-150x150-50": [
+    "armatura-a500c-12",
+    "armaturnaya-100x100-40",
+    "kladochnaya-100x100-40"
+  ],
+  "pvl-406": [
+    "svarnaya-50x50-18",
+    "kladochnaya-50x50-30",
+    "kladochnaya-100x100-40"
+  ],
+  "provoloka-12": [
+    "svarnaya-50x50-18",
+    "kladochnaya-100x100-40",
+    "rabitsa-50x50-15"
+  ],
+  "armatura-a500c-12": [
+    "armaturnaya-150x150-50",
+    "armaturnaya-100x100-40",
+    "kladochnaya-100x100-40"
+  ],
+  "truba-40x20x2": [
+    "kladochnaya-100x100-40",
+    "kladochnaya-50x50-30",
+    "svarnaya-50x50-18"
+  ]
+}

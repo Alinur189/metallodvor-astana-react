@@ -2,6 +2,7 @@ import { Link, Navigate, useParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard.jsx';
 import { getCategoryTitle } from '../data/categories.js';
 import { getProductById, products } from '../data/products.js';
+import relatedProductIds from '../data/relatedProducts.json';
 import { usePageMeta } from '../utils/usePageMeta.js';
 import { buildBreadcrumbJsonLd, buildProductJsonLd } from '../utils/jsonLd.js';
 
@@ -13,9 +14,17 @@ export default function ProductDetail({ onOrder }) {
     return <Navigate to="/catalog" replace />;
   }
 
-  const similarProducts = products
-    .filter((item) => item.category === product.category && item.id !== product.id)
-    .slice(0, 3);
+  // Precomputed by search-api/build_related.py (sentence embeddings);
+  // falls back to same-category products for items added since the last run.
+  const embeddingRelated = (relatedProductIds[product.id] || [])
+    .map(getProductById)
+    .filter(Boolean);
+
+  const similarProducts = embeddingRelated.length > 0
+    ? embeddingRelated
+    : products
+        .filter((item) => item.category === product.category && item.id !== product.id)
+        .slice(0, 3);
 
   usePageMeta(
     `${product.title} — МеталлоДвор Астана`,

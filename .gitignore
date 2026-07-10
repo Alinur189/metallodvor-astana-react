@@ -4,3 +4,7 @@ dist
 .DS_Store
 .idea
 .vercel
+
+# Personal documents kept in this folder, not part of the site
+Internship_Confirmation_Letter.*
+Weekly_Reports.*
