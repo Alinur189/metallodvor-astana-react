@@ -7,7 +7,7 @@ const initialForm = {
   comment: '',
 };
 
-const WHATSAPP_NUMBER = '77021665051';
+const WHATSAPP_NUMBER = '77015877127';
 
 function buildWhatsAppLink(product, form) {
   const lines = [
@@ -86,7 +86,7 @@ export default function OrderModal({ product, onClose }) {
               <a href={buildWhatsAppLink(product, form)} target="_blank" rel="noopener noreferrer">
                 Открыть WhatsApp вручную
               </a>{' '}
-              или позвоните: <a href="tel:+77021665051">+7 702 166 5051</a>
+              или позвоните: <a href="tel:+77015877127">+7 701 587 7127</a>
             </p>
             <button className="btn btn--primary" type="button" onClick={onClose}>
               Понятно

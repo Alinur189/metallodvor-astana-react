@@ -8,7 +8,7 @@ const initialForm = {
   message: '',
 };
 
-const WHATSAPP_NUMBER = '77021665051';
+const WHATSAPP_NUMBER = '77015877127';
 
 function buildWhatsAppLink(form) {
   const lines = [
@@ -74,8 +74,8 @@ export default function Contacts() {
             <a href="tel:+77015877127">+7 701 587 7127</a>
           </article>
           <article className="contactCard">
-            <span>WhatsApp</span>
-            <a href="https://wa.me/77021665051" target="_blank" rel="noreferrer">
+            <span>WhatsApp — Нуржан</span>
+            <a href="https://wa.me/77015877127" target="_blank" rel="noreferrer">
               Написать в WhatsApp
             </a>
           </article>
@@ -100,7 +100,7 @@ export default function Contacts() {
               <a href={submittedLink} target="_blank" rel="noopener noreferrer">
                 Открыть WhatsApp вручную
               </a>{' '}
-              или позвоните: <a href="tel:+77021665051">+7 702 166 5051</a>.
+              или позвоните: <a href="tel:+77015877127">+7 701 587 7127</a>.
             </p>
           )}
 
