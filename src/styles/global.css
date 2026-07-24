@@ -94,6 +94,18 @@ main {
   font-weight: 700;
 }
 
+.topStrip__phone {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.topStrip__phoneIcon {
+  font-size: 15px;
+  line-height: 1;
+}
+
 .siteHeader {
   position: sticky;
   top: 0;
@@ -1285,15 +1297,22 @@ dd {
 }
 
 .floatingButton {
-  width: 58px;
-  height: 58px;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 56px;
+  padding: 0 22px 0 18px;
+  border-radius: 999px;
   color: #fff;
-  font-size: 24px;
+  font-weight: 800;
+  font-size: 16px;
   box-shadow: 0 16px 32px rgba(8, 27, 52, 0.25);
   transition: 0.2s ease;
+}
+
+.floatingButton__icon {
+  font-size: 22px;
+  line-height: 1;
 }
 
 .floatingButton:hover {
@@ -1301,11 +1320,33 @@ dd {
 }
 
 .floatingButton--phone {
+  position: relative;
   background: var(--red-600);
 }
 
 .floatingButton--whatsapp {
   background: var(--green);
+}
+
+/* Пульсация вокруг кнопки звонка — привлекает внимание к звонку. */
+.floatingButton--phone::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 0 0 0 rgba(225, 37, 47, 0.5);
+  animation: callPulse 2s ease-out infinite;
+  pointer-events: none;
+}
+
+@keyframes callPulse {
+  0% { box-shadow: 0 0 0 0 rgba(225, 37, 47, 0.5); }
+  70% { box-shadow: 0 0 0 18px rgba(225, 37, 47, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(225, 37, 47, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floatingButton--phone::after { animation: none; }
 }
 
 .cityPopup {
@@ -1474,7 +1515,27 @@ dd {
 
 @media (max-width: 820px) {
   .topStrip {
+    background: var(--red-600);
+    color: #fff;
+    font-size: 15px;
+  }
+
+  .topStrip__inner {
+    justify-content: center;
+    min-height: 46px;
+  }
+
+  .topStrip__note {
     display: none;
+  }
+
+  .topStrip__phone {
+    gap: 10px;
+    font-size: 16px;
+  }
+
+  .topStrip__phoneIcon {
+    font-size: 17px;
   }
 
   .headerMain {

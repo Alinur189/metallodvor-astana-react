@@ -43,8 +43,11 @@ export default function Header() {
     <header className="siteHeader">
       <div className="topStrip">
         <div className="container topStrip__inner">
-          <span>Сетка сварная для стяжки и кладки  в Астане</span>
-          <a href="tel:+77015877127">+7 701 587 7127</a>
+          <span className="topStrip__note">Сетка сварная для стяжки и кладки в Астане</span>
+          <a className="topStrip__phone" href="tel:+77015877127">
+            <span className="topStrip__phoneIcon" aria-hidden="true">☎</span>
+            <span>Позвонить: <strong>+7 701 587 7127</strong></span>
+          </a>
         </div>
       </div>
 
