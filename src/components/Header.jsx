@@ -15,6 +15,7 @@ const navItems = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [searchParams] = useSearchParams();
   const [searchValue, setSearchValue] = useState(searchParams.get('q') || '');
   const navigate = useNavigate();
@@ -23,6 +24,19 @@ export default function Header() {
   useEffect(() => {
     setSearchValue(searchParams.get('q') || '');
   }, [searchParams]);
+
+  // Сворачиваем строку поиска на мобильном при прокрутке вниз.
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled((prev) => {
+        const next = window.scrollY > 40;
+        return prev === next ? prev : next;
+      });
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   useEffect(() => {
     setMenuOpen(false);
@@ -40,7 +54,7 @@ export default function Header() {
   };
 
   return (
-    <header className="siteHeader">
+    <header className={`siteHeader ${scrolled ? 'siteHeader--scrolled' : ''}`}>
       <div className="topStrip">
         <div className="container topStrip__inner">
           <span className="topStrip__note">Сетка сварная для стяжки и кладки в Астане</span>
