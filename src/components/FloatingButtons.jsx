@@ -5,7 +5,6 @@ export default function FloatingButtons() {
     <div className="floatingButtons" aria-label="Быстрые контакты">
       <a className="floatingButton floatingButton--phone" href="tel:+77015877127" aria-label="Позвонить">
         <span className="floatingButton__icon" aria-hidden="true">☎</span>
-        <span className="floatingButton__label">Позвонить</span>
       </a>
       <a
         className="floatingButton floatingButton--whatsapp"
@@ -15,7 +14,6 @@ export default function FloatingButtons() {
         aria-label="Написать в WhatsApp"
       >
         <span className="floatingButton__icon" aria-hidden="true">💬</span>
-        <span className="floatingButton__label">WhatsApp</span>
       </a>
     </div>
   );

@@ -1297,16 +1297,14 @@ dd {
 }
 
 .floatingButton {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  height: 56px;
-  padding: 0 22px 0 18px;
-  border-radius: 999px;
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
   color: #fff;
-  font-weight: 800;
-  font-size: 16px;
-  box-shadow: 0 16px 32px rgba(8, 27, 52, 0.25);
+  box-shadow: 0 8px 20px rgba(8, 27, 52, 0.16);
+  opacity: 0.92;
   transition: 0.2s ease;
 }
 
@@ -1316,37 +1314,16 @@ dd {
 }
 
 .floatingButton:hover {
-  transform: translateY(-3px) scale(1.03);
+  opacity: 1;
+  transform: translateY(-2px);
 }
 
 .floatingButton--phone {
-  position: relative;
   background: var(--red-600);
 }
 
 .floatingButton--whatsapp {
   background: var(--green);
-}
-
-/* Пульсация вокруг кнопки звонка — привлекает внимание к звонку. */
-.floatingButton--phone::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  box-shadow: 0 0 0 0 rgba(225, 37, 47, 0.5);
-  animation: callPulse 2s ease-out infinite;
-  pointer-events: none;
-}
-
-@keyframes callPulse {
-  0% { box-shadow: 0 0 0 0 rgba(225, 37, 47, 0.5); }
-  70% { box-shadow: 0 0 0 18px rgba(225, 37, 47, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(225, 37, 47, 0); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .floatingButton--phone::after { animation: none; }
 }
 
 .cityPopup {
