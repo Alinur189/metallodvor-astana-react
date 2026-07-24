@@ -49,7 +49,12 @@ export function buildProductJsonLd(product) {
         price: priceDigits,
         availability: 'https://schema.org/InStock',
         url: `${BASE_URL}/product/${product.id}`,
-        seller: { '@type': 'Organization', name: 'МеталлоДвор Астана' },
+        seller: {
+          '@type': 'Organization',
+          name: 'МеталлоДвор Астана',
+          legalName: 'ТОО «МеталлоДвор»',
+          foundingDate: '2006',
+        },
       },
     }),
   };

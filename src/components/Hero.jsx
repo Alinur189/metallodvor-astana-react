@@ -4,7 +4,7 @@ export default function Hero() {
   return (
     <section className="hero" aria-labelledby="hero-title">
       <div className="hero__content">
-        <span className="eyebrow">Склад в Астане • опт и розница</span>
+        <span className="eyebrow">20 лет на рынке • склад в Астане • опт и розница</span>
         <h1 id="hero-title">Сетка сварная для стяжки и кладки  для строительства</h1>
         <p>
           Сварная, кладочная, арматурная сетка, рабица, проволока, арматура и профильная
