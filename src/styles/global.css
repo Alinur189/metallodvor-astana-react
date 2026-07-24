@@ -1515,8 +1515,6 @@ dd {
 
 @media (max-width: 820px) {
   .topStrip {
-    background: var(--red-600);
-    color: #fff;
     font-size: 15px;
   }
 
