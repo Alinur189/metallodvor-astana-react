@@ -1,12 +1,14 @@
 import { useEffect } from 'react';
 
 const BASE_URL = 'https://metallodvorastana.kz';
+// Дефолтное изображение сайта (совпадает с og:image в index.html).
+const DEFAULT_IMAGE = `${BASE_URL}/photos/hero.jpg`;
 
-export function usePageMeta(title, description, keywords, path, jsonLd, image) {
+export function usePageMeta(title, description, keywords, path, jsonLd, image, noindex = false) {
   // При пререндере (scripts/prerender.mjs) эффекты не выполняются,
   // поэтому мета-данные страницы передаются наружу через globalThis.
   if (import.meta.env.SSR) {
-    globalThis.__SSR_PAGE_META__ = { title, description, keywords, path, jsonLd, image };
+    globalThis.__SSR_PAGE_META__ = { title, description, keywords, path, jsonLd, image, noindex };
   }
 
   // jsonLd — объект, который пересоздаётся на каждый рендер; сериализуем,
@@ -22,8 +24,13 @@ export function usePageMeta(title, description, keywords, path, jsonLd, image) {
     setMeta('name', 'twitter:title', title);
     setMeta('name', 'twitter:description', description);
 
+    // keywords/image/robots сбрасываем на каждой странице, иначе при
+    // SPA-переходе (без перезагрузки) сохраняются значения предыдущей —
+    // например, og:image товара «протекает» на страницу «О компании».
     if (keywords) {
       setMeta('name', 'keywords', keywords);
+    } else {
+      removeMeta('name', 'keywords');
     }
 
     const canonicalPath = path || window.location.pathname;
@@ -32,14 +39,16 @@ export function usePageMeta(title, description, keywords, path, jsonLd, image) {
     setMeta('property', 'og:url', canonical);
 
     // image — абсолютный URL изображения для превью ссылок (OG / Twitter).
-    if (image) {
-      const absoluteImage = image.startsWith('http') ? image : `${BASE_URL}${image}`;
-      setMeta('property', 'og:image', absoluteImage);
-      setMeta('name', 'twitter:image', absoluteImage);
-    }
+    const absoluteImage = image
+      ? (image.startsWith('http') ? image : `${BASE_URL}${image}`)
+      : DEFAULT_IMAGE;
+    setMeta('property', 'og:image', absoluteImage);
+    setMeta('name', 'twitter:image', absoluteImage);
+
+    setMeta('name', 'robots', noindex ? 'noindex, follow' : 'index, follow');
 
     setJsonLd(jsonLdString);
-  }, [title, description, keywords, path, jsonLdString, image]);
+  }, [title, description, keywords, path, jsonLdString, image, noindex]);
 }
 
 function setMeta(attr, value, content) {
@@ -50,6 +59,11 @@ function setMeta(attr, value, content) {
     document.head.appendChild(tag);
   }
   tag.setAttribute('content', content);
+}
+
+function removeMeta(attr, value) {
+  const tag = document.querySelector(`meta[${attr}="${value}"]`);
+  if (tag) tag.remove();
 }
 
 function setCanonical(href) {

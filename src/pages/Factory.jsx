@@ -65,8 +65,22 @@ export default function Factory() {
       {/* ── Видео о заводе ── */}
       <h2 className="factorySection__title">Видео о заводе</h2>
       <div className="factoryVideo">
-        <video controls playsInline preload="metadata" src={`${import.meta.env.BASE_URL}videos/factory.mov`}>
-          Ваш браузер не поддерживает видео.
+        <video
+          controls
+          playsInline
+          preload="metadata"
+          poster={`${import.meta.env.BASE_URL}photos/IMG_1701.jpg`}
+        >
+          {/* mp4 (H.264) играет везде; .mov оставлен запасным для Safari.
+              Chrome/Firefox не воспроизводят .mov — поэтому нужен mp4. */}
+          <source src={`${import.meta.env.BASE_URL}videos/factory.mp4`} type="video/mp4" />
+          <source src={`${import.meta.env.BASE_URL}videos/factory.mov`} type="video/quicktime" />
+          <p className="factoryVideo__fallback">
+            Видео не воспроизводится в вашем браузере.{' '}
+            <a href={`${import.meta.env.BASE_URL}videos/factory.mov`} download>
+              Скачать видео
+            </a>
+          </p>
         </video>
       </div>
 

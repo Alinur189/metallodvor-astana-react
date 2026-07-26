@@ -22,6 +22,9 @@ export const routes = [
     path: '/guide/kladochnaya-setka',
     Component: lazyWithPreload(() => import('./pages/GuideMasonryMesh.jsx')),
   },
+  // Catch-all: неизвестные URL показывают страницу 404 (с noindex),
+  // а не молча отдают контент главной. Должен быть последним.
+  { path: '*', Component: lazyWithPreload(() => import('./pages/NotFound.jsx')) },
 ];
 
 // Предзагрузить все маршруты (для пререндера на сервере).

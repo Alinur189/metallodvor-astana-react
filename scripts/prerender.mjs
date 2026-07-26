@@ -37,56 +37,76 @@ const escapeHtml = (s) =>
 
 const template = await readFile(path.join(dist, 'index.html'), 'utf8');
 
-for (const route of routes) {
-  const { html, meta } = await render(route);
-
+// Заполняет шаблон готовым HTML и мета-тегами страницы.
+function buildPage(html, meta, route) {
   let page = template.replace('<div id="root"></div>', `<div id="root">${html}</div>`);
+  if (!meta) return page;
 
-  if (meta) {
-    const title = escapeHtml(meta.title);
-    const description = escapeHtml(meta.description);
-    const canonical = `${BASE_URL}${meta.path || route}`;
+  const title = escapeHtml(meta.title);
+  const description = escapeHtml(meta.description);
+  const canonical = `${BASE_URL}${meta.path || route}`;
 
-    page = page
-      .replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`)
-      .replace(/(<meta name="description" content=")[^"]*(")/, `$1${description}$2`)
-      .replace(/(<link rel="canonical" href=")[^"]*(")/, `$1${canonical}$2`)
-      .replace(/(<meta property="og:title" content=")[^"]*(")/, `$1${title}$2`)
-      .replace(/(<meta property="og:description" content=")[^"]*(")/, `$1${description}$2`)
-      .replace(/(<meta property="og:url" content=")[^"]*(")/, `$1${canonical}$2`)
-      .replace(/(<meta name="twitter:title" content=")[^"]*(")/, `$1${title}$2`)
-      .replace(/(<meta name="twitter:description" content=")[^"]*(")/, `$1${description}$2`);
+  page = page
+    .replace(/<title>[^<]*<\/title>/, `<title>${title}</title>`)
+    .replace(/(<meta name="description" content=")[^"]*(")/, `$1${description}$2`)
+    .replace(/(<link rel="canonical" href=")[^"]*(")/, `$1${canonical}$2`)
+    .replace(/(<meta property="og:title" content=")[^"]*(")/, `$1${title}$2`)
+    .replace(/(<meta property="og:description" content=")[^"]*(")/, `$1${description}$2`)
+    .replace(/(<meta property="og:url" content=")[^"]*(")/, `$1${canonical}$2`)
+    .replace(/(<meta name="twitter:title" content=")[^"]*(")/, `$1${title}$2`)
+    .replace(/(<meta name="twitter:description" content=")[^"]*(")/, `$1${description}$2`);
 
-    if (meta.keywords) {
-      page = page.replace(
-        /(<meta name="keywords" content=")[^"]*(")/,
-        `$1${escapeHtml(meta.keywords)}$2`,
-      );
-    }
-
-    if (meta.image) {
-      const img = escapeHtml(
-        meta.image.startsWith('http') ? meta.image : `${BASE_URL}${meta.image}`,
-      );
-      page = page
-        .replace(/(<meta property="og:image" content=")[^"]*(")/, `$1${img}$2`)
-        .replace(/(<meta name="twitter:image" content=")[^"]*(")/, `$1${img}$2`);
-    }
-
-    if (meta.jsonLd) {
-      // Экранируем `<`, чтобы содержимое не могло закрыть тег <script>.
-      const json = JSON.stringify(meta.jsonLd).replace(/</g, '\\u003c');
-      const script = `<script type="application/ld+json" data-page-jsonld>${json}</script>`;
-      page = page.replace('</head>', `    ${script}\n  </head>`);
-    }
+  if (meta.noindex) {
+    page = page.replace(
+      /(<meta name="robots" content=")[^"]*(")/,
+      `$1noindex, follow$2`,
+    );
   }
 
-  // `/catalog/armatura` → dist/catalog/armatura.html: GitHub Pages отдаёт
+  if (meta.keywords) {
+    page = page.replace(
+      /(<meta name="keywords" content=")[^"]*(")/,
+      `$1${escapeHtml(meta.keywords)}$2`,
+    );
+  }
+
+  if (meta.image) {
+    const img = escapeHtml(
+      meta.image.startsWith('http') ? meta.image : `${BASE_URL}${meta.image}`,
+    );
+    page = page
+      .replace(/(<meta property="og:image" content=")[^"]*(")/, `$1${img}$2`)
+      .replace(/(<meta name="twitter:image" content=")[^"]*(")/, `$1${img}$2`);
+  }
+
+  if (meta.jsonLd) {
+    // Экранируем `<`, чтобы содержимое не могло закрыть тег <script>.
+    const json = JSON.stringify(meta.jsonLd).replace(/</g, '\\u003c');
+    const script = `<script type="application/ld+json" data-page-jsonld>${json}</script>`;
+    page = page.replace('</head>', `    ${script}\n  </head>`);
+  }
+
+  return page;
+}
+
+for (const route of routes) {
+  const { html, meta } = await render(route);
+  const page = buildPage(html, meta, route);
+
+  // `/catalog/armatura` → dist/catalog/armatura.html: хостинг отдаёт
   // .html-файл по URL без расширения напрямую, без 301-редиректа на слэш.
   const outFile =
     route === '/' ? path.join(dist, 'index.html') : path.join(dist, `${route.slice(1)}.html`);
   await mkdir(path.dirname(outFile), { recursive: true });
   await writeFile(outFile, page);
+}
+
+// Страница 404: любой несуществующий URL попадает на catch-all роут.
+// Vercel отдаёт dist/404.html с HTTP-статусом 404 для незнакомых путей.
+{
+  const { html, meta } = await render('/__404__');
+  const page = buildPage(html, meta, '/404');
+  await writeFile(path.join(dist, '404.html'), page);
 }
 
 const today = new Date().toISOString().slice(0, 10);
