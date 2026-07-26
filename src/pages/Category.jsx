@@ -15,6 +15,10 @@ export default function Category({ onOrder }) {
     return <Navigate to="/catalog" replace />;
   }
 
+  return <CategoryView category={category} onOrder={onOrder} />;
+}
+
+function CategoryView({ category, onOrder }) {
   const categoryProducts = getProductsByCategory(category.slug);
 
   usePageMeta(

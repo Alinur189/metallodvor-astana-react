@@ -14,6 +14,10 @@ export default function ProductDetail({ onOrder }) {
     return <Navigate to="/catalog" replace />;
   }
 
+  return <ProductDetailView product={product} onOrder={onOrder} />;
+}
+
+function ProductDetailView({ product, onOrder }) {
   // Precomputed by search-api/build_related.py (sentence embeddings);
   // falls back to same-category products for items added since the last run.
   const embeddingRelated = (relatedProductIds[product.id] || [])

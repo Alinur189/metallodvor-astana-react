@@ -52,7 +52,6 @@ function loadGtag(ga4Id, adsId) {
 }
 
 function loadMetaPixel(id) {
-  /* eslint-disable */
   !(function (f, b, e, v, n, t, s) {
     if (f.fbq) return;
     n = f.fbq = function () {
@@ -69,13 +68,11 @@ function loadMetaPixel(id) {
     s = b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t, s);
   })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-  /* eslint-enable */
   window.fbq('init', id);
   window.fbq('track', 'PageView');
 }
 
 function loadYandexMetrika(id) {
-  /* eslint-disable */
   (function (m, e, t, r, i, k, a) {
     m[i] =
       m[i] ||
@@ -89,7 +86,6 @@ function loadYandexMetrika(id) {
       (k.src = r),
       a.parentNode.insertBefore(k, a);
   })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js', 'ym');
-  /* eslint-enable */
   window.ym(id, 'init', {
     clickmap: true,
     trackLinks: true,
