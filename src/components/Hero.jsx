@@ -5,7 +5,7 @@ export default function Hero() {
     <section className="hero" aria-labelledby="hero-title">
       <div className="hero__content">
         <span className="eyebrow">20 лет на рынке • склад в Астане • опт и розница</span>
-        <h1 id="hero-title">Сетка сварная для стяжки и кладки  для строительства</h1>
+        <h1 id="hero-title">Металлопрокат и сетка в Астане</h1>
         <p>
           Сварная, кладочная, арматурная сетка, рабица, проволока, арматура и профильная
           труба. Комплектуем заказы для подрядчиков, складов и частных строителей.

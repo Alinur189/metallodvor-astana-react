@@ -5,6 +5,10 @@ dist
 .idea
 .vercel
 
+# Local Claude Code permissions: contains absolute paths and machine-specific
+# rules. The shared .claude/settings.json is committed on purpose.
+.claude/settings.local.json
+
 # Personal documents kept in this folder, not part of the site
 Internship_Confirmation_Letter.*
 Weekly_Reports.*

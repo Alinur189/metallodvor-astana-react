@@ -17,8 +17,12 @@ export default function PriceList({ onOrder }) {
         <span className="eyebrow">Прайс-лист</span>
         <h1>Ориентировочные цены на металлопродукцию</h1>
         <p>
-          Цены могут меняться в зависимости от партии, наличия и условий доставки. Для точного
-          коммерческого предложения отправьте заявку менеджеру.
+          Цены указаны как «от» и могут меняться в зависимости от объёма, наличия и условий
+          доставки. Для точной цены напишите в{' '}
+          <a href="https://wa.me/77015877127" target="_blank" rel="noopener noreferrer">
+            WhatsApp
+          </a>{' '}
+          или позвоните: <a href="tel:+77015877127">+7 701 587 7127</a>.
         </p>
       </div>
 
@@ -41,16 +45,7 @@ export default function PriceList({ onOrder }) {
                 </td>
                 <td>{getCategoryTitle(product.category)}</td>
                 <td>{product.size}</td>
-                <td>
-                  <a
-                    href="https://docs.google.com/spreadsheets/d/1OpseU3JsMv1ZPVDZ7VpHGfWppY7QsykH0dx1ZGgmC8w/edit?gid=0#gid=0"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="priceLink"
-                  >
-                    см. прайс-лист
-                  </a>
-                </td>
+                <td className="priceValue">{product.price}</td>
                 <td>
                   <button className="tableButton" type="button" onClick={() => onOrder(product)}>
                     Заказать

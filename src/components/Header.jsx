@@ -8,7 +8,6 @@ const navItems = [
   { to: '/catalog', label: 'Каталог товаров' },
   { to: '/about', label: 'О компании' },
   { to: '/factory', label: 'Наш завод' },
-  { to: '/delivery', label: 'Услуги' },
   { to: '/delivery', label: 'Доставка' },
   { to: '/contacts', label: 'Контакты' },
 ];
@@ -80,11 +79,6 @@ export default function Header() {
           />
           <button type="submit">Найти</button>
         </form>
-
-        <button className="cartButton" type="button" aria-label="Корзина">
-          <span>🛒</span>
-          <strong>Корзина пуста</strong>
-        </button>
 
         <button
           className="burger"

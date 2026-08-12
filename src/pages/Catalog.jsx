@@ -77,8 +77,13 @@ export default function Catalog({ onOrder }) {
 
         {filteredProducts.length > 0 ? (
           <div className="productGrid">
-            {filteredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} onOrder={onOrder} />
+            {filteredProducts.map((product, index) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+                onOrder={onOrder}
+                priority={index === 0}
+              />
             ))}
           </div>
         ) : (
