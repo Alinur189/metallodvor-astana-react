@@ -1,0 +1,170 @@
+{
+  "/images/armatura.jpg": {
+    "width": 840,
+    "height": 517,
+    "variants": [
+      {
+        "width": 420,
+        "src": "/images/armatura-420.webp"
+      },
+      {
+        "width": 840,
+        "src": "/images/armatura-840.webp"
+      }
+    ]
+  },
+  "/images/list-pvl.jpg": {
+    "width": 840,
+    "height": 559,
+    "variants": [
+      {
+        "width": 420,
+        "src": "/images/list-pvl-420.webp"
+      },
+      {
+        "width": 840,
+        "src": "/images/list-pvl-840.webp"
+      }
+    ]
+  },
+  "/images/profilnaya-truba.jpg": {
+    "width": 840,
+    "height": 645,
+    "variants": [
+      {
+        "width": 420,
+        "src": "/images/profilnaya-truba-420.webp"
+      },
+      {
+        "width": 840,
+        "src": "/images/profilnaya-truba-840.webp"
+      }
+    ]
+  },
+  "/images/provoloka-vyazalnaya.jpg": {
+    "width": 630,
+    "height": 840,
+    "variants": [
+      {
+        "width": 420,
+        "src": "/images/provoloka-vyazalnaya-420.webp"
+      },
+      {
+        "width": 630,
+        "src": "/images/provoloka-vyazalnaya-630.webp"
+      }
+    ]
+  },
+  "/images/setka-armaturnaya-150.jpg": {
+    "width": 630,
+    "height": 840,
+    "variants": [
+      {
+        "width": 420,
+        "src": "/images/setka-armaturnaya-150-420.webp"
+      },
+      {
+        "width": 630,
+        "src": "/images/setka-armaturnaya-150-630.webp"
+      }
+    ]
+  },
+  "/images/setka-armaturnaya.jpg": {
+    "width": 630,
+    "height": 840,
+    "variants": [
+      {
+        "width": 420,
+        "src": "/images/setka-armaturnaya-420.webp"
+      },
+      {
+        "width": 630,
+        "src": "/images/setka-armaturnaya-630.webp"
+      }
+    ]
+  },
+  "/images/setka-kladochnaya-usilennaya.jpg": {
+    "width": 630,
+    "height": 840,
+    "variants": [
+      {
+        "width": 420,
+        "src": "/images/setka-kladochnaya-usilennaya-420.webp"
+      },
+      {
+        "width": 630,
+        "src": "/images/setka-kladochnaya-usilennaya-630.webp"
+      }
+    ]
+  },
+  "/images/setka-kladochnaya.jpg": {
+    "width": 570,
+    "height": 760,
+    "variants": [
+      {
+        "width": 420,
+        "src": "/images/setka-kladochnaya-420.webp"
+      },
+      {
+        "width": 570,
+        "src": "/images/setka-kladochnaya-570.webp"
+      }
+    ]
+  },
+  "/images/setka-rabitsa-pvh.jpg": {
+    "width": 840,
+    "height": 559,
+    "variants": [
+      {
+        "width": 420,
+        "src": "/images/setka-rabitsa-pvh-420.webp"
+      },
+      {
+        "width": 840,
+        "src": "/images/setka-rabitsa-pvh-840.webp"
+      }
+    ]
+  },
+  "/images/setka-rabitsa.jpg": {
+    "width": 840,
+    "height": 630,
+    "variants": [
+      {
+        "width": 420,
+        "src": "/images/setka-rabitsa-420.webp"
+      },
+      {
+        "width": 840,
+        "src": "/images/setka-rabitsa-840.webp"
+      }
+    ]
+  },
+  "/images/setka-svarnaya-karty.jpg": {
+    "width": 630,
+    "height": 840,
+    "variants": [
+      {
+        "width": 420,
+        "src": "/images/setka-svarnaya-karty-420.webp"
+      },
+      {
+        "width": 630,
+        "src": "/images/setka-svarnaya-karty-630.webp"
+      }
+    ]
+  },
+  "/images/setka-svarnaya-rulon.jpg": {
+    "width": 840,
+    "height": 794,
+    "variants": [
+      {
+        "width": 420,
+        "src": "/images/setka-svarnaya-rulon-420.webp"
+      },
+      {
+        "width": 840,
+        "src": "/images/setka-svarnaya-rulon-840.webp"
+      }
+    ]
+  }
+}

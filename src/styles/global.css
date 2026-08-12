@@ -627,6 +627,14 @@ p {
     radial-gradient(circle, rgba(21, 86, 154, 0.12), transparent 60%);
 }
 
+/* <picture> из ProductImage не должен создавать свой бокс: иначе height: 100%
+   у картинки считается от него (высота auto), а не от обёртки, и раскладка
+   разъезжается. display: contents убирает его из потока. */
+.productCard__imageWrap picture,
+.productDetail__image picture {
+  display: contents;
+}
+
 .productCard__imageWrap img {
   width: 100%;
   height: 100%;
@@ -695,12 +703,16 @@ dt {
   font-size: 14px;
 }
 
-.priceLink {
-  color: var(--blue-700);
-  font-weight: 600;
-  font-size: 14px;
-  text-decoration: underline;
+/* Цена приходит из products.js уже в виде «от 12 500 ₸» — nowrap, чтобы
+   сумма не разрывалась между строк в узкой колонке карточки. */
+.priceValue {
+  color: var(--blue-900);
+  font-weight: 800;
+  white-space: nowrap;
 }
+
+/* .priceNote объявлена ниже, рядом с .productDetail__info p — иначе то
+   правило перебивает её по специфичности (0,1,1 против 0,1,0). */
 
 dd {
   margin: 0;
@@ -782,6 +794,12 @@ dd {
 .ctaBanner p {
   margin: 0;
   max-width: 680px;
+}
+
+.ctaBanner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .ctaBanner--light {
@@ -939,6 +957,20 @@ dd {
   color: var(--gray-500);
   line-height: 1.75;
   font-size: 17px;
+}
+
+/* Мелкая сноска под характеристиками. Идёт после .productDetail__info p и
+   с равной специфичностью (0,1,1), поэтому побеждает по порядку в файле. */
+p.priceNote {
+  margin: 14px 0 0;
+  color: var(--gray-700);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+p.priceNote a {
+  color: var(--blue-700);
+  font-weight: 600;
 }
 
 .specTable {
@@ -1674,7 +1706,8 @@ dd {
 
   .hero__actions,
   .productCard__actions,
-  .productDetail__actions {
+  .productDetail__actions,
+  .ctaBanner__actions {
     flex-direction: column;
   }
 

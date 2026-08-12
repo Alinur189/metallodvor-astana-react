@@ -1,7 +1,14 @@
 import { Link } from 'react-router-dom';
+import ProductImage from './ProductImage.jsx';
 import { getCategoryTitle } from '../data/categories.js';
 
-export default function ProductCard({ product, onOrder }) {
+// Сетка карточек: 3 колонки, с 1100px — 2, с 520px — одна.
+// Контейнер съедает 32px отступов, поэтому одна колонка — не ровно 100vw.
+const CARD_SIZES = '(max-width: 520px) calc(100vw - 32px), (max-width: 1100px) 50vw, 360px';
+
+// priority — карточка стоит в первом видимом ряду (выше сгиба), подробности
+// про загрузку и fetchpriority — в ProductImage.jsx.
+export default function ProductCard({ product, onOrder, priority = false }) {
   const isPhoto = !product.image.endsWith('.svg');
 
   return (
@@ -10,7 +17,12 @@ export default function ProductCard({ product, onOrder }) {
         to={`/product/${product.id}`}
         className={`productCard__imageWrap ${isPhoto ? 'productCard__imageWrap--photo' : ''}`}
       >
-        <img src={product.image} alt={product.title} loading="lazy" />
+        <ProductImage
+          src={product.image}
+          alt={product.title}
+          sizes={CARD_SIZES}
+          priority={priority}
+        />
       </Link>
 
       <div className="productCard__body">
@@ -27,7 +39,7 @@ export default function ProductCard({ product, onOrder }) {
           </div>
           <div>
             <dt>Цена</dt>
-            <dd><Link to="/price-list" className="priceLink">см. прайс-лист</Link></dd>
+            <dd className="priceValue">{product.price}</dd>
           </div>
         </dl>
 

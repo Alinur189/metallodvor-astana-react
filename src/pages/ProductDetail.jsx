@@ -1,5 +1,6 @@
 import { Link, Navigate, useParams } from 'react-router-dom';
 import ProductCard from '../components/ProductCard.jsx';
+import ProductImage from '../components/ProductImage.jsx';
 import { getCategoryTitle } from '../data/categories.js';
 import { getProductById, products } from '../data/products.js';
 import relatedProductIds from '../data/relatedProducts.json';
@@ -59,7 +60,13 @@ function ProductDetailView({ product, onOrder }) {
 
       <div className="productDetail__grid">
         <div className={`productDetail__image ${product.image.endsWith('.svg') ? '' : 'productDetail__image--photo'}`}>
-          <img src={product.image} alt={product.title} />
+          {/* Главная картинка товара — LCP-элемент страницы, грузим приоритетно. */}
+          <ProductImage
+            src={product.image}
+            alt={product.title}
+            sizes="(max-width: 820px) 100vw, 500px"
+            priority
+          />
         </div>
 
         <article className="productDetail__info">
@@ -74,16 +81,7 @@ function ProductDetailView({ product, onOrder }) {
             </div>
             <div>
               <dt>Цена</dt>
-              <dd>
-                <a
-                  href="https://docs.google.com/spreadsheets/d/1OpseU3JsMv1ZPVDZ7VpHGfWppY7QsykH0dx1ZGgmC8w/edit?gid=0#gid=0"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="priceLink"
-                >
-                  см. прайс-лист
-                </a>
-              </dd>
+              <dd className="priceValue">{product.price}</dd>
             </div>
             <div>
               <dt>Город</dt>
@@ -94,6 +92,15 @@ function ProductDetailView({ product, onOrder }) {
               <dd>В наличии и под заказ</dd>
             </div>
           </dl>
+
+          <p className="priceNote">
+            Цена ориентировочная и зависит от объёма, наличия и условий доставки. Для точной
+            цены напишите в{' '}
+            <a href="https://wa.me/77015877127" target="_blank" rel="noopener noreferrer">
+              WhatsApp
+            </a>{' '}
+            или позвоните: <a href="tel:+77015877127">+7 701 587 7127</a>.
+          </p>
 
           <div className="productDetail__actions">
             <button className="btn btn--primary" type="button" onClick={() => onOrder(product)}>
