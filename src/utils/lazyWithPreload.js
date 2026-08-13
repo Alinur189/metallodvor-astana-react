@@ -10,6 +10,7 @@ import { createElement } from 'react';
 export function lazyWithPreload(factory) {
   let status = 'idle';
   let result;
+  let error;
   let pending;
 
   const load = () => {
@@ -23,7 +24,7 @@ export function lazyWithPreload(factory) {
         },
         (err) => {
           status = 'rejected';
-          result = err;
+          error = err;
           throw err;
         },
       );
@@ -32,6 +33,13 @@ export function lazyWithPreload(factory) {
   };
 
   const Component = (props) => {
+    // Чанк не загрузился (чаще всего — деплой выкатился, пока вкладка была
+    // открыта, и старого файла на CDN уже нет). Бросать здесь отклонённый
+    // промис нельзя: React повесит на него обработчик, снова получит reject,
+    // снова отрендерит — и так по кругу, а до ErrorBoundary ошибка не дойдёт.
+    // Бросаем саму ошибку, чтобы сработал ErrorBoundary.
+    if (status === 'rejected') throw error;
+
     if (status !== 'resolved') {
       // Бросаем промис — Suspense покажет fallback и перерендерит после загрузки.
       throw load();
