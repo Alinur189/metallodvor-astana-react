@@ -1,5 +1,11 @@
 import { Link } from 'react-router-dom';
+import ProductImage from '../components/ProductImage.jsx';
 import { usePageMeta } from '../utils/usePageMeta.js';
+
+// Галерея: 3 колонки на десктопе, 2 на планшете и телефоне.
+// Контейнер съедает 32px отступов, между колонками — 16px.
+const PHOTO_SIZES =
+  '(max-width: 900px) calc((100vw - 48px) / 2), (max-width: 1232px) calc((100vw - 64px) / 3), 389px';
 
 const capabilities = [
   { title: 'Сварная сетка', desc: 'Производим сварную сетку любых типоразмеров — для ограждений, армирования и технических нужд.' },
@@ -57,7 +63,7 @@ export default function Factory() {
           { file: 'IMG_1705.jpg', alt: 'Металлопрокат Астана' },
         ].map((photo) => (
           <div className="factoryPhoto" key={photo.file}>
-            <img src={`${import.meta.env.BASE_URL}photos/${photo.file}`} alt={photo.alt} loading="lazy" />
+            <ProductImage src={`/photos/${photo.file}`} alt={photo.alt} sizes={PHOTO_SIZES} />
           </div>
         ))}
       </div>
@@ -69,15 +75,16 @@ export default function Factory() {
           controls
           playsInline
           preload="metadata"
-          poster={`${import.meta.env.BASE_URL}photos/IMG_1701.jpg`}
+          poster="/photos/IMG_1701-420.webp"
         >
-          {/* mp4 (H.264) играет везде; .mov оставлен запасным для Safari.
-              Chrome/Firefox не воспроизводят .mov — поэтому нужен mp4. */}
-          <source src={`${import.meta.env.BASE_URL}videos/factory.mp4`} type="video/mp4" />
-          <source src={`${import.meta.env.BASE_URL}videos/factory.mov`} type="video/quicktime" />
+          {/* Только H.264 в mp4 — он играет во всех браузерах. Исходник с телефона
+              был HEVC в контейнере .mov: такой файл не воспроизводят ни Chrome,
+              ни Firefox, поэтому видео на странице было мёртвым. Перекодировка —
+              см. «Видео» в README (7.4 МБ → 2.0 МБ). */}
+          <source src="/videos/factory.mp4" type="video/mp4" />
           <p className="factoryVideo__fallback">
             Видео не воспроизводится в вашем браузере.{' '}
-            <a href={`${import.meta.env.BASE_URL}videos/factory.mov`} download>
+            <a href="/videos/factory.mp4" download>
               Скачать видео
             </a>
           </p>

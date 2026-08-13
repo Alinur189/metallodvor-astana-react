@@ -8,6 +8,10 @@
         "src": "/images/armatura-420.webp"
       },
       {
+        "width": 630,
+        "src": "/images/armatura-630.webp"
+      },
+      {
         "width": 840,
         "src": "/images/armatura-840.webp"
       }
@@ -22,6 +26,10 @@
         "src": "/images/list-pvl-420.webp"
       },
       {
+        "width": 630,
+        "src": "/images/list-pvl-630.webp"
+      },
+      {
         "width": 840,
         "src": "/images/list-pvl-840.webp"
       }
@@ -34,6 +42,10 @@
       {
         "width": 420,
         "src": "/images/profilnaya-truba-420.webp"
+      },
+      {
+        "width": 630,
+        "src": "/images/profilnaya-truba-630.webp"
       },
       {
         "width": 840,
@@ -120,6 +132,10 @@
         "src": "/images/setka-rabitsa-pvh-420.webp"
       },
       {
+        "width": 630,
+        "src": "/images/setka-rabitsa-pvh-630.webp"
+      },
+      {
         "width": 840,
         "src": "/images/setka-rabitsa-pvh-840.webp"
       }
@@ -132,6 +148,10 @@
       {
         "width": 420,
         "src": "/images/setka-rabitsa-420.webp"
+      },
+      {
+        "width": 630,
+        "src": "/images/setka-rabitsa-630.webp"
       },
       {
         "width": 840,
@@ -162,8 +182,192 @@
         "src": "/images/setka-svarnaya-rulon-420.webp"
       },
       {
+        "width": 630,
+        "src": "/images/setka-svarnaya-rulon-630.webp"
+      },
+      {
         "width": 840,
         "src": "/images/setka-svarnaya-rulon-840.webp"
+      }
+    ]
+  },
+  "/photos/IMG_1686.jpg": {
+    "width": 900,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 420,
+        "src": "/photos/IMG_1686-420.webp"
+      },
+      {
+        "width": 630,
+        "src": "/photos/IMG_1686-630.webp"
+      },
+      {
+        "width": 840,
+        "src": "/photos/IMG_1686-840.webp"
+      }
+    ]
+  },
+  "/photos/IMG_1687.jpg": {
+    "width": 900,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 420,
+        "src": "/photos/IMG_1687-420.webp"
+      },
+      {
+        "width": 630,
+        "src": "/photos/IMG_1687-630.webp"
+      },
+      {
+        "width": 840,
+        "src": "/photos/IMG_1687-840.webp"
+      }
+    ]
+  },
+  "/photos/IMG_1691.jpg": {
+    "width": 900,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 420,
+        "src": "/photos/IMG_1691-420.webp"
+      },
+      {
+        "width": 630,
+        "src": "/photos/IMG_1691-630.webp"
+      },
+      {
+        "width": 840,
+        "src": "/photos/IMG_1691-840.webp"
+      }
+    ]
+  },
+  "/photos/IMG_1692.jpg": {
+    "width": 900,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 420,
+        "src": "/photos/IMG_1692-420.webp"
+      },
+      {
+        "width": 630,
+        "src": "/photos/IMG_1692-630.webp"
+      },
+      {
+        "width": 840,
+        "src": "/photos/IMG_1692-840.webp"
+      }
+    ]
+  },
+  "/photos/IMG_1693.jpg": {
+    "width": 900,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 420,
+        "src": "/photos/IMG_1693-420.webp"
+      },
+      {
+        "width": 630,
+        "src": "/photos/IMG_1693-630.webp"
+      },
+      {
+        "width": 840,
+        "src": "/photos/IMG_1693-840.webp"
+      }
+    ]
+  },
+  "/photos/IMG_1696.jpg": {
+    "width": 900,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 420,
+        "src": "/photos/IMG_1696-420.webp"
+      },
+      {
+        "width": 630,
+        "src": "/photos/IMG_1696-630.webp"
+      },
+      {
+        "width": 840,
+        "src": "/photos/IMG_1696-840.webp"
+      }
+    ]
+  },
+  "/photos/IMG_1701.jpg": {
+    "width": 900,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 420,
+        "src": "/photos/IMG_1701-420.webp"
+      },
+      {
+        "width": 630,
+        "src": "/photos/IMG_1701-630.webp"
+      },
+      {
+        "width": 840,
+        "src": "/photos/IMG_1701-840.webp"
+      }
+    ]
+  },
+  "/photos/IMG_1702.jpg": {
+    "width": 900,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 420,
+        "src": "/photos/IMG_1702-420.webp"
+      },
+      {
+        "width": 630,
+        "src": "/photos/IMG_1702-630.webp"
+      },
+      {
+        "width": 840,
+        "src": "/photos/IMG_1702-840.webp"
+      }
+    ]
+  },
+  "/photos/IMG_1705.jpg": {
+    "width": 900,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 420,
+        "src": "/photos/IMG_1705-420.webp"
+      },
+      {
+        "width": 630,
+        "src": "/photos/IMG_1705-630.webp"
+      },
+      {
+        "width": 840,
+        "src": "/photos/IMG_1705-840.webp"
+      }
+    ]
+  },
+  "/photos/hero.jpg": {
+    "width": 900,
+    "height": 1200,
+    "variants": [
+      {
+        "width": 420,
+        "src": "/photos/hero-420.webp"
+      },
+      {
+        "width": 630,
+        "src": "/photos/hero-630.webp"
+      },
+      {
+        "width": 840,
+        "src": "/photos/hero-840.webp"
       }
     ]
   }

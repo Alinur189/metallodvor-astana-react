@@ -631,7 +631,8 @@ p {
    у картинки считается от него (высота auto), а не от обёртки, и раскладка
    разъезжается. display: contents убирает его из потока. */
 .productCard__imageWrap picture,
-.productDetail__image picture {
+.productDetail__image picture,
+.factoryPhoto picture {
   display: contents;
 }
 
@@ -1769,12 +1770,16 @@ p.priceNote a {
   border-radius: var(--radius-md);
 }
 
+/* Видео снято на телефон и вертикальное (9:16). В горизонтальной рамке 16/9
+   оно занимало примерно треть ширины, остальное — пустые чёрные поля,
+   поэтому рамка повторяет пропорции ролика и ограничена по ширине. */
 .factoryVideo {
-  margin-bottom: 2.5rem;
+  margin: 0 auto 2.5rem;
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: var(--gray-200);
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 9 / 16;
+  max-width: 360px;
   display: flex;
   align-items: center;
   justify-content: center;
