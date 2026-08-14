@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, matchPath } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
 import App from './App.jsx';
 import { routes } from './routes.jsx';
 import './styles/global.css';
@@ -9,11 +8,9 @@ import './styles/global.css';
 const container = document.getElementById('root');
 const app = (
   <React.StrictMode>
-    <HelmetProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </HelmetProvider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
