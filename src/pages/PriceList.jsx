@@ -3,6 +3,13 @@ import { getCategoryTitle } from '../data/categories.js';
 import { products } from '../data/products.js';
 import { usePageMeta } from '../utils/usePageMeta.js';
 
+// Развёрнутый прайс в Google-таблице. Раньше на неё вели все три кнопки
+// «Прайс-лист» (шапка, футер, главный экран) — человек уходил с сайта, где
+// не работают ни кнопки заявки, ни аналитика. Теперь кнопки ведут сюда,
+// а таблица осталась ссылкой со страницы, для тех кому нужен полный список.
+const FULL_PRICE_SHEET_URL =
+  'https://docs.google.com/spreadsheets/d/1OpseU3JsMv1ZPVDZ7VpHGfWppY7QsykH0dx1ZGgmC8w/preview';
+
 export default function PriceList({ onOrder }) {
   usePageMeta(
     'Прайс-лист на сварную сетку и металлопрокат в Астане | МеталлоДвор',
@@ -23,6 +30,12 @@ export default function PriceList({ onOrder }) {
             WhatsApp
           </a>{' '}
           или позвоните: <a href="tel:+77015877127">+7 701 587 7127</a>.
+        </p>
+        <p>
+          Нужен развёрнутый список позиций?{' '}
+          <a href={FULL_PRICE_SHEET_URL} target="_blank" rel="noopener noreferrer">
+            Полный прайс-лист в таблице →
+          </a>
         </p>
       </div>
 
@@ -67,3 +80,4 @@ export default function PriceList({ onOrder }) {
     </section>
   );
 }
+

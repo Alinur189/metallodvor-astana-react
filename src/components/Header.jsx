@@ -2,13 +2,12 @@ import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import logo from '../assets/logo.jpg';
 
-const PRICE_LIST_URL = 'https://docs.google.com/spreadsheets/d/1OpseU3JsMv1ZPVDZ7VpHGfWppY7QsykH0dx1ZGgmC8w/edit?gid=0#gid=0';
-
 const navItems = [
   { to: '/catalog', label: 'Каталог товаров' },
   { to: '/about', label: 'О компании' },
   { to: '/factory', label: 'Наш завод' },
   { to: '/delivery', label: 'Доставка' },
+  { to: '/price-list', label: 'Прайс-лист' },
   { to: '/contacts', label: 'Контакты' },
 ];
 
@@ -104,14 +103,6 @@ export default function Header() {
               {item.label}
             </NavLink>
           ))}
-          <a
-            href={PRICE_LIST_URL}
-            className="navLink"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Прайс-лист
-          </a>
         </div>
       </nav>
     </header>
