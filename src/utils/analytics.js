@@ -19,6 +19,14 @@ const GOOGLE_ADS_LABELS = {
   whatsapp_click: import.meta.env.VITE_GADS_LABEL_WHATSAPP || '',
 };
 
+// GA4 с включённым Enhanced measurement сам собирает событие form_submit по любой
+// отправке формы на странице. Наша цель называется так же, и в отчётах GA4 они бы
+// слились в одно имя. Шлём её в GA4 под отдельным именем — на Google Ads, Meta и
+// Яндекс это не влияет, там имена целей остаются прежними.
+const GA4_EVENT_NAMES = {
+  form_submit: 'lead_form_submit',
+};
+
 const isBrowser = typeof window !== 'undefined';
 
 let initialized = false;
@@ -41,7 +49,11 @@ function loadGtag(ga4Id, adsId) {
     window.dataLayer.push(arguments);
   };
   window.gtag('js', new Date());
-  if (ga4Id) window.gtag('config', ga4Id);
+  // send_page_view:false — автоматический просмотр GA4 отключён намеренно.
+  // Он бы ушёл до того, как страница выставит document.title, и заголовок в
+  // отчётах был бы от предыдущей страницы. Просмотры шлёт usePageMeta, который
+  // знает и путь, и заголовок. На Google Ads это не распространяется.
+  if (ga4Id) window.gtag('config', ga4Id, { send_page_view: false });
   if (adsId) window.gtag('config', adsId);
 
   const srcId = ga4Id || adsId;
@@ -109,7 +121,7 @@ export function trackEvent(name, params = {}) {
   if (!isBrowser) return;
 
   if (window.gtag && ANALYTICS.ga4) {
-    window.gtag('event', name, params);
+    window.gtag('event', GA4_EVENT_NAMES[name] || name, params);
   }
 
   // Конверсия Google Ads: отправляем только для целей с заданной меткой.
@@ -137,13 +149,28 @@ export function trackEvent(name, params = {}) {
   }
 }
 
-// Просмотр страницы для SPA-переходов (первый просмотр шлёт сам счётчик).
-export function trackPageView(path) {
+let pageViewsSent = 0;
+
+// Просмотр страницы. Вызывается из usePageMeta — он единственный знает и путь,
+// и уже выставленный заголовок, поэтому только оттуда заголовок приходит верным.
+export function trackPageView(path, title) {
   if (!isBrowser) return;
 
+  pageViewsSent += 1;
+
   if (window.gtag && ANALYTICS.ga4) {
-    window.gtag('event', 'page_view', { page_path: path });
+    // GA4 читает page_location/page_title, а не page_path — это параметр из
+    // старой Universal Analytics, GA4 его игнорирует.
+    window.gtag('event', 'page_view', {
+      page_location: window.location.origin + path,
+      page_title: title || document.title,
+    });
   }
+
+  // Meta и Яндекс шлют первый просмотр сами при инициализации, поэтому для них
+  // (в отличие от GA4) первый вызов пропускаем, иначе он задвоится.
+  if (pageViewsSent === 1) return;
+
   if (window.fbq && ANALYTICS.metaPixel) {
     window.fbq('track', 'PageView');
   }

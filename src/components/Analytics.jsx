@@ -1,6 +1,5 @@
-import { useEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
-import { initAnalytics, trackEvent, trackPageView } from '../utils/analytics.js';
+import { useEffect } from 'react';
+import { initAnalytics, trackEvent } from '../utils/analytics.js';
 
 // Определяет тип контакта по ссылке для делегированного клика.
 function resolveLinkGoal(href) {
@@ -14,9 +13,6 @@ function resolveLinkGoal(href) {
 // Подключает счётчики, ловит клики по всем контактным ссылкам сайта
 // (tel / WhatsApp / mailto) и отправляет просмотры при SPA-переходах.
 export default function Analytics() {
-  const location = useLocation();
-  const firstRender = useRef(true);
-
   useEffect(() => {
     initAnalytics();
 
@@ -37,14 +33,7 @@ export default function Analytics() {
     return () => document.removeEventListener('click', onClick, { capture: true });
   }, []);
 
-  // Первый просмотр шлёт сам счётчик при init — считаем только последующие переходы.
-  useEffect(() => {
-    if (firstRender.current) {
-      firstRender.current = false;
-      return;
-    }
-    trackPageView(location.pathname + location.search);
-  }, [location.pathname, location.search]);
-
+  // Просмотры страниц шлёт usePageMeta — он вызывается на каждой из страниц и
+  // делает это после того, как выставит document.title.
   return null;
 }

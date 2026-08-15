@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { trackPageView } from './analytics.js';
 
 const BASE_URL = 'https://metallodvorastana.kz';
 // Дефолтное изображение сайта (совпадает с og:image в index.html).
@@ -48,6 +49,11 @@ export function usePageMeta(title, description, keywords, path, jsonLd, image, n
     setMeta('name', 'robots', noindex ? 'noindex, follow' : 'index, follow');
 
     setJsonLd(jsonLdString);
+
+    // Просмотр отправляем здесь, а не в <Analytics />: тот смонтирован выше
+    // ленивых роутов, поэтому его эффект успевает отработать до того, как
+    // страница выставит заголовок, и в GA4 уходил title предыдущей страницы.
+    trackPageView(canonicalPath, title);
   }, [title, description, keywords, path, jsonLdString, image, noindex]);
 }
 
