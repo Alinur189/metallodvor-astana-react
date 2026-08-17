@@ -12,6 +12,7 @@ Photographed at the Metallodvor Astana production site. Source originals in
 | setka-armaturnaya.jpg | IMG_1693.jpg (reinforcing mesh cards) |
 | setka-armaturnaya-150.jpg | IMG_1691.jpg (welded mesh sheets) |
 | setka-kladochnaya.jpg | own factory photo |
+| setka-svarnaya-rulon.jpg | provided by owner, 2026-08-17 (replaced the Wikimedia "GI welded mesh 100mm 6mm (4)"); provenance unconfirmed — verify before wide use |
 
 ## Wikimedia Commons (attribution required, CC BY-SA 4.0 — share-alike)
 
@@ -19,7 +20,6 @@ Keep this section with the images.
 
 | File | Source (Wikimedia Commons) | License |
 | --- | --- | --- |
-| setka-svarnaya-rulon.jpg | "GI welded mesh 100mm 6mm (4)" | CC BY-SA 4.0 |
 | setka-kladochnaya-usilennaya.jpg | "GI welded Fence 100mm 6mm (2)" | CC BY-SA 4.0 |
 | setka-rabitsa.jpg | "Chain Link Fence" | CC BY-SA 4.0 |
 | setka-rabitsa-pvh.jpg | "Part of green chain-link fence In Tuntorp" | CC BY-SA 4.0 |

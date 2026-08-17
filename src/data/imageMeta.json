@@ -174,20 +174,16 @@
     ]
   },
   "/images/setka-svarnaya-rulon.jpg": {
-    "width": 840,
-    "height": 794,
+    "width": 469,
+    "height": 256,
     "variants": [
       {
         "width": 420,
         "src": "/images/setka-svarnaya-rulon-420.webp"
       },
       {
-        "width": 630,
-        "src": "/images/setka-svarnaya-rulon-630.webp"
-      },
-      {
-        "width": 840,
-        "src": "/images/setka-svarnaya-rulon-840.webp"
+        "width": 469,
+        "src": "/images/setka-svarnaya-rulon-469.webp"
       }
     ]
   },
