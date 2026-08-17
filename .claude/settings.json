@@ -1,4 +1,28 @@
 {
+  "hooks": {
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/memory-index.mjs\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/memory-index.mjs\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  },
   "permissions": {
     "allow": [
       "mcp__claude-in-chrome__navigate",
@@ -10,10 +34,21 @@
       "mcp__claude-in-chrome__tabs_context_mcp",
       "mcp__claude-in-chrome__resize_window",
       "mcp__claude-in-chrome__list_connected_browsers",
+      "mcp__claude-in-chrome__tabs_create_mcp",
+      "mcp__claude-in-chrome__tabs_close_mcp",
+      "mcp__claude-in-chrome__select_browser",
+      "mcp__claude-in-chrome__switch_browser",
+      "mcp__claude-in-chrome__computer",
+      "mcp__claude-in-chrome__browser_batch",
+      "mcp__claude-in-chrome__javascript_tool",
       "mcp__ide__getDiagnostics",
+      "Bash(git fetch)",
+      "Bash(git fetch *)",
+      "Bash(git check-ignore *)",
       "Bash(npm run lint)",
       "Bash(npm run check)",
       "Bash(npm run build)",
+      "Bash(npm run preview)",
       "Bash(npm ls *)",
       "Bash(npm --version)",
       "Bash(vercel ls)",
